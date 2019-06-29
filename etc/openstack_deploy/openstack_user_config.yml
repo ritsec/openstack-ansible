@@ -1,0 +1,147 @@
+---
+# Config for the RITSEC OpenStack Deployment using openstack-ansible
+# openstack_user_config.yml.example was used as a reference
+cidr_networks:
+  container: 10.0.10.0/24 # This is the management network.  Openstack-ansible uses containers for the deployment
+  tunnel: 10.0.30.0/24 # VXLAN Tunnel network
+  storage: 10.0.9.0/24 # Ceph's Public / Client network
+
+used_ips: # IP Addrs that are already used on each network
+  - "10.0.9.1,10.0.9.20" # Nova Storage
+  - "10.0.9.101,10.0.9.110" # Storage - Ceph Public
+  - "10.0.9.201,10.0.9.210" # Controller Storage
+  - "10.0.10.1,10.0.10.20" # Nova Mgmt
+  - "10.0.10.101,10.0.10.110" # Storage Mgmt
+  - "10.0.10.201,10.0.10.210" # Controller Mgmt
+  - "10.0.10.240,10.0.10.254" # Network Devices
+  - "10.0.30.1,10.0.30.20" # Nova VXLAN
+  - "10.0.30.101,10.0.30.110" # Controller VXLAN
+
+global_overrides:
+  internal_lb_vip_address: "10.0.10.50"
+  external_lb_vip_address: cloud.ritsec.club
+  management_bridge: "bond-mgmt"
+  provider_networks:
+  - network:
+    container_bridge: "bond-mgmt"
+    container_type: "veth"
+    container_interface: "eth1"
+    ip_from_q: "container"
+    type: "raw"
+    container_mtu: "1600"
+    group_binds:
+      - all_containers
+      - hosts
+    is_container_address: true
+    is_ssh_address: true
+  - network:
+    container_bridge: "vxlan.30"
+    container_type: "veth"
+    container_interface: "eth10"
+    ip_from_q: "tunnel"
+    type: "vxlan"
+    container_mtu: "1600"
+    range: "1:2000"
+    net_name: "vxlan"
+    group_binds:
+      - neutron_linuxbridge_agent
+  - network:
+    container_bridge: "tgeth0"
+    container_type: "veth"
+    container_interface: "eth2"
+    ip_from_q: "storage"
+    type: "raw"
+    container_mtu: "9000"
+    group_binds:
+      - glance_api
+      - cinder_api
+      - cinder_volume
+      - nova_compute
+      - ceph-osd
+
+# Controller Nodes
+controller_hosts: &controller_hosts
+  mgmt01:
+    ip: 10.0.10.201
+  mgmt02:
+    ip: 10.0.10.202
+  mgmt03:
+    ip: 10.0.10.203
+
+# Nova Nodes
+compute_hosts: &compute_hosts
+  nova01:
+    ip: 10.0.10.1
+  nova02:
+    ip: 10.0.10.2
+  nova03:
+    ip: 10.0.10.3
+  nova04:
+    ip: 10.0.10.4
+  nova05:
+    ip: 10.0.10.5
+    #  nova06:
+    #ip: 10.0.10.6
+  nova07:
+    ip: 10.0.10.7
+  nova08:
+    ip: 10.0.10.8
+  nova09:
+    ip: 10.0.10.9
+  nova10:
+    ip: 10.0.10.10
+  nova11:
+    ip: 10.0.10.11
+  nova12:
+    ip: 10.0.10.12
+
+# galera, memcache, rabbitmq, utility
+shared-infra_hosts: *controller_hosts
+
+# repository (apt cache, python packages, etc)
+repo-infra_hosts: *controller_hosts
+
+# load balancer
+# Ideally the load balancer should not use the Infrastructure hosts.
+# Dedicated hardware is best for improved performance and security.
+haproxy_hosts: *controller_hosts
+
+###
+### OpenStack
+###
+
+# keystone
+identity_hosts: *controller_hosts
+
+# cinder api services
+storage-infra_hosts: *controller_hosts
+
+# cinder volume hosts (Ceph RBD-backed)
+storage_hosts: *controller_hosts
+
+# glance
+image_hosts: *controller_hosts
+
+# nova api, conductor, etc services
+compute-infra_hosts: *compute_hosts
+
+# heat
+orchestration_hosts: *controller_hosts
+
+# horizon
+dashboard_hosts: *controller_hosts
+
+# neutron server, agents (L3, etc)
+network_hosts: *controller_hosts
+
+# ceilometer (telemetry data collection)
+metering-infra_hosts: *controller_hosts
+
+# aodh (telemetry alarm service)
+metering-alarm_hosts: *controller_hosts
+
+# gnocchi (telemetry metrics storage)
+metrics_hosts: *controller_hosts
+
+# ceilometer compute agent (telemetry data collection)
+metering-compute_hosts: *compute_hosts
