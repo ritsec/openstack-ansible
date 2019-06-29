@@ -48,19 +48,19 @@ install_method: source
 # Note that "swift" is automatically set as the default back-end if there
 # are any swift hosts in the environment. Use this setting to override
 # this automation if you wish for a different default back-end.
-# glance_default_store: file
+glance_default_store: rdb
 
 ## Ceph pool name for Glance to use
-# glance_rbd_store_pool: images
-# glance_rbd_store_chunk_size: 8
+glance_rbd_store_pool: images
+glance_rbd_store_chunk_size: 8
 
 ## Common Nova Overrides
 # When nova_libvirt_images_rbd_pool is defined, ceph will be installed on nova
 # hosts.
-# nova_libvirt_images_rbd_pool: vms
+nova_libvirt_images_rbd_pool: vms
 
 # If you wish to change the dhcp_domain configured for both nova and neutron
-# dhcp_domain: openstacklocal
+dhcp_domain: ritsec.co
 
 ## Common Glance Overrides when using a Swift back-end
 # By default when 'glance_default_store' is set to 'swift' the playbooks will
@@ -83,10 +83,10 @@ install_method: source
 # glance_swift_store_region: "NAME_OF_REGION"
 
 ## Common Ceph Overrides
-# ceph_mons:
-#   - 10.16.5.40
-#   - 10.16.5.41
-#   - 10.16.5.42
+ceph_mons:
+  - 10.0.9.201
+  - 10.0.9.202
+  - 10.0.9.203
 
 ## Custom Ceph Configuration File (ceph.conf)
 # By default, your deployment host will connect to one of the mons defined above to
@@ -107,7 +107,7 @@ install_method: source
 # RabbitMQ over encrypted connections on port 5671. To opt-out of this default,
 # set the rabbitmq_use_ssl variable to 'false'. The default setting of 'true'
 # is highly recommended for securing the contents of RabbitMQ messages.
-# rabbitmq_use_ssl: false
+rabbitmq_use_ssl: true
 
 # RabbitMQ management plugin is enabled by default, the guest user has been
 # removed for security reasons and a new userid 'monitoring' has been created
