@@ -24,41 +24,41 @@ global_overrides:
   management_bridge: "br-mgmt"
   provider_networks:
     - network:
-      container_bridge: "br-mgmt"
-      container_type: "veth"
-      container_interface: "eth1"
-      ip_from_q: "container"
-      type: "raw"
-      container_mtu: "1600"
-      group_binds:
-        - all_containers
-        - hosts
-      is_container_address: true
-      is_ssh_address: true
+        container_bridge: "br-mgmt"
+        container_type: "veth"
+        container_interface: "eth1"
+        ip_from_q: "container"
+        type: "raw"
+        container_mtu: "1600"
+        group_binds:
+          - all_containers
+          - hosts
+        is_container_address: true
+        is_ssh_address: true
     - network:
-      container_bridge: "br-vxlan"
-      container_type: "veth"
-      container_interface: "eth10"
-      ip_from_q: "tunnel"
-      type: "vxlan"
-      container_mtu: "1600"
-      range: "1:2000"
-      net_name: "vxlan"
-      group_binds:
-        - neutron_linuxbridge_agent
+        container_bridge: "br-vxlan"
+        container_type: "veth"
+        container_interface: "eth10"
+        ip_from_q: "tunnel"
+        type: "vxlan"
+        container_mtu: "1600"
+        range: "1:2000"
+        net_name: "vxlan"
+        group_binds:
+          - neutron_linuxbridge_agent
     - network:
-      container_bridge: "br-storage"
-      container_type: "veth"
-      container_interface: "eth2"
-      ip_from_q: "storage"
-      type: "raw"
-      container_mtu: "9000"
-      group_binds:
-        - glance_api
-        - cinder_api
-        - cinder_volume
-        - nova_compute
-        - ceph-osd
+        container_bridge: "br-storage"
+        container_type: "veth"
+        container_interface: "eth2"
+        ip_from_q: "storage"
+        type: "raw"
+        container_mtu: "9000"
+        group_binds:
+          - glance_api
+          - cinder_api
+          - cinder_volume
+          - nova_compute
+          - ceph-osd
 
 # Controller Nodes
 controller_hosts: &controller_hosts
