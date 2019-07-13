@@ -173,10 +173,11 @@ rabbitmq_use_ssl: true
 # HAProxy Keepalived configuration (cf. documentation)
 # Make sure that this is set correctly according to the CIDR used for your
 # internal and external addresses.
-# haproxy_keepalived_external_vip_cidr: "{{external_lb_vip_address}}/32"
-# haproxy_keepalived_internal_vip_cidr: "{{internal_lb_vip_address}}/32"
-# haproxy_keepalived_external_interface:
-# haproxy_keepalived_internal_interface:
+# TODO: figure this out
+haproxy_keepalived_external_vip_cidr: "{{external_lb_vip_address}}/32"
+haproxy_keepalived_internal_vip_cidr: 10.0.10.0/24
+haproxy_keepalived_external_interface:
+haproxy_keepalived_internal_interface: br-mgmt
 
 # Defines the default VRRP id used for keepalived with haproxy.
 # Overwrite it to your value to make sure you don't overlap
@@ -191,3 +192,15 @@ rabbitmq_use_ssl: true
 
 # Keepalived default IP address used to check its alive status (IPv4 only)
 # keepalived_ping_address: "193.0.14.129"
+
+cinder_backends:
+  cinder_ssd:
+    volume_name: cinder_ssd
+    volume_driver: cinder.volume.drivers.rbd.RBDDriver
+    rbd_pool: cinder-ssd
+    rbd_ceph_conf: /etc/ceph/ceph.conf
+    rbd_store_chunk_size: 8
+    volume_backend_name: rbddriver
+    rbd_user: cinder-nova
+    rbd_secret_uuid: 
+    report_discard_supported: true

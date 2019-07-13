@@ -1,7 +1,7 @@
 ---
 # Config for the RITSEC OpenStack Deployment using openstack-ansible
 # openstack_user_config.yml.example was used as a reference
-cidr_networks:
+cidr_networks: &cidr_networks
   container: 10.0.10.0/24 # This is the management network.  Openstack-ansible uses containers for the deployment
   tunnel: 10.0.30.0/24 # VXLAN Tunnel network
   storage: 10.0.9.0/24 # Ceph's Public / Client network
@@ -18,46 +18,47 @@ used_ips: # IP Addrs that are already used on each network
   - "10.0.30.101,10.0.30.110" # Controller VXLAN
 
 global_overrides:
+  cidr_networks: *cidr_networks
   internal_lb_vip_address: "10.0.10.50"
-  external_lb_vip_address: cloud.ritsec.club
-  management_bridge: "bond-mgmt"
+  external_lb_vip_address: www.ritsec.cloud
+  management_bridge: "br-mgmt"
   provider_networks:
-  - network:
-    container_bridge: "bond-mgmt"
-    container_type: "veth"
-    container_interface: "eth1"
-    ip_from_q: "container"
-    type: "raw"
-    container_mtu: "1600"
-    group_binds:
-      - all_containers
-      - hosts
-    is_container_address: true
-    is_ssh_address: true
-  - network:
-    container_bridge: "vxlan.30"
-    container_type: "veth"
-    container_interface: "eth10"
-    ip_from_q: "tunnel"
-    type: "vxlan"
-    container_mtu: "1600"
-    range: "1:2000"
-    net_name: "vxlan"
-    group_binds:
-      - neutron_linuxbridge_agent
-  - network:
-    container_bridge: "tgeth0"
-    container_type: "veth"
-    container_interface: "eth2"
-    ip_from_q: "storage"
-    type: "raw"
-    container_mtu: "9000"
-    group_binds:
-      - glance_api
-      - cinder_api
-      - cinder_volume
-      - nova_compute
-      - ceph-osd
+    - network:
+      container_bridge: "br-mgmt"
+      container_type: "veth"
+      container_interface: "eth1"
+      ip_from_q: "container"
+      type: "raw"
+      container_mtu: "1600"
+      group_binds:
+        - all_containers
+        - hosts
+      is_container_address: true
+      is_ssh_address: true
+    - network:
+      container_bridge: "br-vxlan"
+      container_type: "veth"
+      container_interface: "eth10"
+      ip_from_q: "tunnel"
+      type: "vxlan"
+      container_mtu: "1600"
+      range: "1:2000"
+      net_name: "vxlan"
+      group_binds:
+        - neutron_linuxbridge_agent
+    - network:
+      container_bridge: "br-storage"
+      container_type: "veth"
+      container_interface: "eth2"
+      ip_from_q: "storage"
+      type: "raw"
+      container_mtu: "9000"
+      group_binds:
+        - glance_api
+        - cinder_api
+        - cinder_volume
+        - nova_compute
+        - ceph-osd
 
 # Controller Nodes
 controller_hosts: &controller_hosts
@@ -80,8 +81,8 @@ compute_hosts: &compute_hosts
     ip: 10.0.10.4
   nova05:
     ip: 10.0.10.5
-    #  nova06:
-    #ip: 10.0.10.6
+#  nova06:
+#    ip: 10.0.10.6
   nova07:
     ip: 10.0.10.7
   nova08:
@@ -145,3 +146,9 @@ metrics_hosts: *controller_hosts
 
 # ceilometer compute agent (telemetry data collection)
 metering-compute_hosts: *compute_hosts
+
+# designate
+# magnum
+# masakari
+# octavia
+# trove
