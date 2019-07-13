@@ -18,47 +18,58 @@ used_ips: # IP Addrs that are already used on each network
   - "10.0.30.101,10.0.30.110" # Controller VXLAN
 
 global_overrides:
+  security_login_banner_text: |
+###############################################################################
+#                                  NOTICE                                     #
+#                                                                             #
+#   This is an RITSEC Cloud system. It is managed by the RITSEC Operations    #
+#   program. If you have not been explictly granted access to this system     #
+#   by an RITSEC Operations Program member, DISCONNECT IMMEDIATELY!           #
+##############################################################################
+
+  security_sshd_client_alive_interval: 600
+  security_sshd_client_alive_count_max: 2
   cidr_networks: *cidr_networks
   internal_lb_vip_address: "10.0.10.50"
   external_lb_vip_address: www.ritsec.cloud
   management_bridge: "br-mgmt"
   provider_networks:
     - network:
-      container_bridge: "br-mgmt"
-      container_type: "veth"
-      container_interface: "eth1"
-      ip_from_q: "container"
-      type: "raw"
-      container_mtu: "1600"
-      group_binds:
-        - all_containers
-        - hosts
-      is_container_address: true
-      is_ssh_address: true
+        container_bridge: "br-mgmt"
+        container_type: "veth"
+        container_interface: "eth1"
+        ip_from_q: "container"
+        type: "raw"
+        container_mtu: "1600"
+        group_binds:
+          - all_containers
+          - hosts
+        is_container_address: true
+        is_ssh_address: true
     - network:
-      container_bridge: "br-vxlan"
-      container_type: "veth"
-      container_interface: "eth10"
-      ip_from_q: "tunnel"
-      type: "vxlan"
-      container_mtu: "1600"
-      range: "1:2000"
-      net_name: "vxlan"
-      group_binds:
-        - neutron_linuxbridge_agent
+        container_bridge: "br-vxlan"
+        container_type: "veth"
+        container_interface: "eth10"
+        ip_from_q: "tunnel"
+        type: "vxlan"
+        container_mtu: "1600"
+        range: "1:2000"
+        net_name: "vxlan"
+        group_binds:
+          - neutron_linuxbridge_agent
     - network:
-      container_bridge: "br-storage"
-      container_type: "veth"
-      container_interface: "eth2"
-      ip_from_q: "storage"
-      type: "raw"
-      container_mtu: "9000"
-      group_binds:
-        - glance_api
-        - cinder_api
-        - cinder_volume
-        - nova_compute
-        - ceph-osd
+        container_bridge: "br-storage"
+        container_type: "veth"
+        container_interface: "eth2"
+        ip_from_q: "storage"
+        type: "raw"
+        container_mtu: "9000"
+        group_binds:
+          - glance_api
+          - cinder_api
+          - cinder_volume
+          - nova_compute
+          - ceph-osd
 
 # Controller Nodes
 controller_hosts: &controller_hosts
@@ -147,8 +158,17 @@ metrics_hosts: *controller_hosts
 # ceilometer compute agent (telemetry data collection)
 metering-compute_hosts: *compute_hosts
 
-# designate
-# magnum
-# masakari
-# octavia
-# trove
+# designate (DNS as a service)
+dnsaas_hosts: *controller_hosts
+
+# magnum (Deployment and management of docker swarm/k8s)
+magnum-infra_hosts: *controller_hosts
+
+# masakari (Nova instance HA - recovers instances when a Nova node dies)
+masakari-infra_hosts: *controller_hosts
+
+# octavia (reference implementation of Neutron network load balancer)
+octavia-infra_hosts: *controller_hosts
+
+# trove (databases as a service)
+trove-infra_hosts: *controller_hosts
