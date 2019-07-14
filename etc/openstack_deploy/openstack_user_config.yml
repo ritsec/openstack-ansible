@@ -23,7 +23,8 @@ global_overrides:
   security_rhel7_session_timeout: 0
   cidr_networks: *cidr_networks
   internal_lb_vip_address: 10.0.10.201
-  external_lb_vip_address: www.ritsec.cloud
+  # 129.21.228.193 (.254)
+  external_lb_vip_address: stack.ritsec.cloud
   management_bridge: "br-mgmt"
   provider_networks:
     - network:
