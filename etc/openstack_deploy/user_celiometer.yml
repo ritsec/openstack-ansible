@@ -1,0 +1,4 @@
+---
+ceilometer_service_region: '{{ service_region }}'
+ceilometer_gnocchi_enabled: true
+ceilometer_aodh_enabled: true
