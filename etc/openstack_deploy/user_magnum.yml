@@ -1,0 +1,3 @@
+---
+magnum_ceilometer_enabled: true
+magnum_service_region: '{{ service_region }}'

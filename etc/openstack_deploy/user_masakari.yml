@@ -1,0 +1,2 @@
+---
+masakari_service_region: '{{ service_region }}'

@@ -7,9 +7,13 @@
     ], 
     "ansible_all_ipv6_addresses": [
         "fe80::7ccd:69ff:fe3c:d6e6", 
+        "fe80::fcf9:9ff:fe70:32f5", 
         "fe80::a073:34ff:feff:389d", 
         "fe80::80ba:b5ff:fed5:2f9e", 
+        "fe80::249d:1aff:fe46:73e9", 
+        "fe80::fc3e:63ff:fef7:66ca", 
         "fe80::b472:d1ff:fe18:a5d8", 
+        "fe80::1446:92ff:fec9:e5c0", 
         "fe80::84e0:84ff:fe1a:4b59"
     ], 
     "ansible_apparmor": {
@@ -41,7 +45,8 @@
         "device": "br-mgmt", 
         "id": "8000.7ecd693cd6e6", 
         "interfaces": [
-            "vlan.10"
+            "vlan.10", 
+            "d32b1e14_eth1"
         ], 
         "ipv4": {
             "address": "10.0.10.11", 
@@ -134,6 +139,26 @@
         "stp": false, 
         "type": "bridge"
     }, 
+    "ansible_br_wan": {
+        "active": true, 
+        "device": "br-wan", 
+        "id": "8000.164692c9e5c0", 
+        "interfaces": [
+            "vlan.5"
+        ], 
+        "ipv6": [
+            {
+                "address": "fe80::249d:1aff:fe46:73e9", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
+        "macaddress": "16:46:92:c9:e5:c0", 
+        "mtu": 1600, 
+        "promisc": false, 
+        "stp": false, 
+        "type": "bridge"
+    }, 
     "ansible_cmdline": {
         "BOOT_IMAGE": "/boot/vmlinuz-4.15.0-50-generic", 
         "quiet": true, 
@@ -142,19 +167,51 @@
         "splash": true, 
         "vt.handoff": "1"
     }, 
+    "ansible_d32b1e14_eth0": {
+        "active": true, 
+        "device": "d32b1e14_eth0", 
+        "ipv6": [
+            {
+                "address": "fe80::fcf9:9ff:fe70:32f5", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
+        "macaddress": "fe:f9:09:70:32:f5", 
+        "mtu": 1500, 
+        "promisc": true, 
+        "speed": 10000, 
+        "type": "ether"
+    }, 
+    "ansible_d32b1e14_eth1": {
+        "active": true, 
+        "device": "d32b1e14_eth1", 
+        "ipv6": [
+            {
+                "address": "fe80::fc3e:63ff:fef7:66ca", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
+        "macaddress": "fe:3e:63:f7:66:ca", 
+        "mtu": 1600, 
+        "promisc": true, 
+        "speed": 10000, 
+        "type": "ether"
+    }, 
     "ansible_date_time": {
         "date": "2019-07-14", 
         "day": "14", 
-        "epoch": "1563080419", 
-        "hour": "01", 
-        "iso8601": "2019-07-14T05:00:19Z", 
-        "iso8601_basic": "20190714T010019537620", 
-        "iso8601_basic_short": "20190714T010019", 
-        "iso8601_micro": "2019-07-14T05:00:19.537695Z", 
-        "minute": "00", 
+        "epoch": "1563122425", 
+        "hour": "12", 
+        "iso8601": "2019-07-14T16:40:25Z", 
+        "iso8601_basic": "20190714T124025660162", 
+        "iso8601_basic_short": "20190714T124025", 
+        "iso8601_micro": "2019-07-14T16:40:25.660234Z", 
+        "minute": "40", 
         "month": "07", 
-        "second": "19", 
-        "time": "01:00:19", 
+        "second": "25", 
+        "time": "12:40:25", 
         "tz": "EDT", 
         "tz_offset": "-0400", 
         "weekday": "Sunday", 
@@ -858,12 +915,12 @@
         "PWD": "/root", 
         "SHELL": "/bin/bash", 
         "SHLVL": "1", 
-        "SSH_AUTH_SOCK": "/tmp/ssh-qwUJonMIpb/agent.2233", 
-        "SSH_CLIENT": "10.0.10.201 53778 22", 
-        "SSH_CONNECTION": "10.0.10.201 53778 10.0.10.11 22", 
+        "SSH_AUTH_SOCK": "/tmp/ssh-keP7C7q9zm/agent.21509", 
+        "SSH_CLIENT": "10.0.10.201 59104 22", 
+        "SSH_CONNECTION": "10.0.10.201 59104 10.0.10.11 22", 
         "USER": "root", 
         "XDG_RUNTIME_DIR": "/run/user/0", 
-        "XDG_SESSION_ID": "1478", 
+        "XDG_SESSION_ID": "2211", 
         "_": "/bin/sh"
     }, 
     "ansible_fips": false, 
@@ -919,19 +976,23 @@
     }, 
     "ansible_hostname": "nova11", 
     "ansible_interfaces": [
+        "geth3", 
         "lxcbr0", 
+        "d32b1e14_eth0", 
         "tgeth0", 
         "bond-mgmt", 
         "br-vxlan", 
         "lo", 
-        "br-mgmt", 
+        "br-wan", 
         "br-vlan", 
+        "br-storage", 
         "geth0", 
         "geth1", 
         "vlan.30", 
-        "br-storage", 
+        "vlan.5", 
         "geth2", 
-        "geth3", 
+        "br-mgmt", 
+        "d32b1e14_eth1", 
         "vlan.10"
     ], 
     "ansible_kernel": "4.15.0-50-generic", 
@@ -969,10 +1030,12 @@
         "vgs": {}
     }, 
     "ansible_lxcbr0": {
-        "active": false, 
+        "active": true, 
         "device": "lxcbr0", 
-        "id": "8000.000000000000", 
-        "interfaces": [], 
+        "id": "8000.fef9097032f5", 
+        "interfaces": [
+            "d32b1e14_eth0"
+        ], 
         "ipv4": {
             "address": "10.0.3.1", 
             "broadcast": "10.0.3.255", 
@@ -986,6 +1049,7 @@
                 "scope": "link"
             }
         ], 
+        "macaddress": "fe:f9:09:70:32:f5", 
         "mtu": 1500, 
         "promisc": false, 
         "stp": false, 
@@ -993,16 +1057,16 @@
     }, 
     "ansible_machine": "x86_64", 
     "ansible_machine_id": "f74f4cdb994c48bfbc5f7d1227873aaf", 
-    "ansible_memfree_mb": 141496, 
+    "ansible_memfree_mb": 140606, 
     "ansible_memory_mb": {
         "nocache": {
-            "free": 144147, 
-            "used": 901
+            "free": 144011, 
+            "used": 1037
         }, 
         "real": {
-            "free": 141496, 
+            "free": 140606, 
             "total": 145048, 
-            "used": 3552
+            "used": 4442
         }, 
         "swap": {
             "cached": 0, 
@@ -1014,18 +1078,18 @@
     "ansible_memtotal_mb": 145048, 
     "ansible_mounts": [
         {
-            "block_available": 55182674, 
+            "block_available": 54997395, 
             "block_size": 4096, 
             "block_total": 59828639, 
-            "block_used": 4645965, 
+            "block_used": 4831244, 
             "device": "/dev/sda1", 
             "fstype": "ext4", 
-            "inode_available": 15156427, 
+            "inode_available": 15139518, 
             "inode_total": 15269888, 
-            "inode_used": 113461, 
+            "inode_used": 130370, 
             "mount": "/", 
             "options": "rw,relatime,errors=remount-ro,data=ordered", 
-            "size_available": 226028232704, 
+            "size_available": 225269329920, 
             "size_total": 245058105344, 
             "uuid": "d10306f6-28af-454e-904e-60747766c89c"
         }, 
@@ -1217,7 +1281,7 @@
         "speed": 10000, 
         "type": "ether"
     }, 
-    "ansible_uptime_seconds": 85680, 
+    "ansible_uptime_seconds": 127686, 
     "ansible_user_dir": "/root", 
     "ansible_user_gecos": "root", 
     "ansible_user_gid": 0, 
@@ -1240,6 +1304,22 @@
     "ansible_vlan.30": {
         "active": true, 
         "device": "vlan.30", 
+        "macaddress": "16:46:92:c9:e5:c0", 
+        "mtu": 1600, 
+        "promisc": true, 
+        "speed": 2000, 
+        "type": "ether"
+    }, 
+    "ansible_vlan.5": {
+        "active": true, 
+        "device": "vlan.5", 
+        "ipv6": [
+            {
+                "address": "fe80::1446:92ff:fec9:e5c0", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
         "macaddress": "16:46:92:c9:e5:c0", 
         "mtu": 1600, 
         "promisc": true, 

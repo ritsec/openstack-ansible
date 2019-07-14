@@ -3,7 +3,10 @@
         "10.0.3.93", 
         "10.0.10.196"
     ], 
-    "ansible_all_ipv6_addresses": [], 
+    "ansible_all_ipv6_addresses": [
+        "fe80::216:3eff:fef1:5f55", 
+        "fe80::216:3eff:fe2c:8984"
+    ], 
     "ansible_apparmor": {
         "status": "disabled"
     }, 
@@ -23,16 +26,16 @@
     "ansible_date_time": {
         "date": "2019-07-14", 
         "day": "14", 
-        "epoch": "1563081402", 
-        "hour": "05", 
-        "iso8601": "2019-07-14T05:16:42Z", 
-        "iso8601_basic": "20190714T051642459365", 
-        "iso8601_basic_short": "20190714T051642", 
-        "iso8601_micro": "2019-07-14T05:16:42.459518Z", 
-        "minute": "16", 
+        "epoch": "1563123439", 
+        "hour": "16", 
+        "iso8601": "2019-07-14T16:57:19Z", 
+        "iso8601_basic": "20190714T165719450442", 
+        "iso8601_basic_short": "20190714T165719", 
+        "iso8601_micro": "2019-07-14T16:57:19.450555Z", 
+        "minute": "57", 
         "month": "07", 
-        "second": "42", 
-        "time": "05:16:42", 
+        "second": "19", 
+        "time": "16:57:19", 
         "tz": "UTC", 
         "tz_offset": "+0000", 
         "weekday": "Sunday", 
@@ -677,7 +680,7 @@
         "SHLVL": "1", 
         "USER": "root", 
         "XDG_RUNTIME_DIR": "/run/user/0", 
-        "XDG_SESSION_ID": "1100", 
+        "XDG_SESSION_ID": "1989", 
         "_": "/bin/sh"
     }, 
     "ansible_eth0": {
@@ -689,6 +692,13 @@
             "netmask": "255.255.255.0", 
             "network": "10.0.3.0"
         }, 
+        "ipv6": [
+            {
+                "address": "fe80::216:3eff:fef1:5f55", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
         "macaddress": "00:16:3e:f1:5f:55", 
         "mtu": 1500, 
         "promisc": false, 
@@ -704,6 +714,13 @@
             "netmask": "255.255.255.0", 
             "network": "10.0.10.0"
         }, 
+        "ipv6": [
+            {
+                "address": "fe80::216:3eff:fe2c:8984", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
         "macaddress": "00:16:3e:2c:89:84", 
         "mtu": 1600, 
         "promisc": false, 
@@ -743,6 +760,7 @@
     "ansible_local": {
         "openstack_ansible": {
             "galera": {
+                "deployed": "True", 
                 "initialized": "True"
             }, 
             "lxc": {
@@ -752,23 +770,23 @@
     }, 
     "ansible_lsb": {
         "codename": "bionic", 
-        "description": "\"Ubuntu 18.04.2 LTS\"", 
+        "description": "Ubuntu 18.04.2 LTS", 
         "id": "Ubuntu", 
         "major_release": "18", 
         "release": "18.04"
     }, 
     "ansible_machine": "x86_64", 
     "ansible_machine_id": "e69c34c48ec34a0283aa863a0a46ab62", 
-    "ansible_memfree_mb": 40171, 
+    "ansible_memfree_mb": 39237, 
     "ansible_memory_mb": {
         "nocache": {
-            "free": 40175, 
-            "used": 45
+            "free": 39756, 
+            "used": 464
         }, 
         "real": {
-            "free": 40171, 
+            "free": 39237, 
             "total": 40220, 
-            "used": 49
+            "used": 983
         }, 
         "swap": {
             "cached": 0, 
@@ -780,50 +798,82 @@
     "ansible_memtotal_mb": 40220, 
     "ansible_mounts": [
         {
-            "block_available": 50327302, 
+            "block_available": 48844018, 
             "block_size": 4096, 
             "block_total": 59828639, 
-            "block_used": 9501337, 
+            "block_used": 10984621, 
             "device": "/dev/sda1", 
             "fstype": "ext4", 
-            "inode_available": 14825421, 
+            "inode_available": 14784037, 
             "inode_total": 15269888, 
-            "inode_used": 444467, 
+            "inode_used": 485851, 
             "mount": "/", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 206140628992, 
+            "size_available": 200065097728, 
             "size_total": 245058105344, 
             "uuid": "N/A"
         }, 
         {
-            "block_available": 50327302, 
+            "block_available": 48844018, 
             "block_size": 4096, 
             "block_total": 59828639, 
-            "block_used": 9501337, 
+            "block_used": 10984621, 
             "device": "/dev/sda1", 
             "fstype": "ext4", 
-            "inode_available": 14825421, 
+            "inode_available": 14784037, 
             "inode_total": 15269888, 
-            "inode_used": 444467, 
+            "inode_used": 485851, 
             "mount": "/var/backup", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 206140628992, 
+            "size_available": 200065097728, 
             "size_total": 245058105344, 
             "uuid": "N/A"
         }, 
         {
-            "block_available": 50327302, 
+            "block_available": 48844018, 
             "block_size": 4096, 
             "block_total": 59828639, 
-            "block_used": 9501337, 
+            "block_used": 10984621, 
             "device": "/dev/sda1", 
             "fstype": "ext4", 
-            "inode_available": 14825421, 
+            "inode_available": 14784037, 
             "inode_total": 15269888, 
-            "inode_used": 444467, 
+            "inode_used": 485851, 
             "mount": "/var/log/journal/e69c34c48ec34a0283aa863a0a46ab62", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 206140628992, 
+            "size_available": 200065097728, 
+            "size_total": 245058105344, 
+            "uuid": "N/A"
+        }, 
+        {
+            "block_available": 48844018, 
+            "block_size": 4096, 
+            "block_total": 59828639, 
+            "block_used": 10984621, 
+            "device": "/dev/sda1", 
+            "fstype": "ext4", 
+            "inode_available": 14784037, 
+            "inode_total": 15269888, 
+            "inode_used": 485851, 
+            "mount": "/var/log", 
+            "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
+            "size_available": 200065097728, 
+            "size_total": 245058105344, 
+            "uuid": "N/A"
+        }, 
+        {
+            "block_available": 48844018, 
+            "block_size": 4096, 
+            "block_total": 59828639, 
+            "block_used": 10984621, 
+            "device": "/dev/sda1", 
+            "fstype": "ext4", 
+            "inode_available": 14784037, 
+            "inode_total": 15269888, 
+            "inode_used": 485851, 
+            "mount": "/var/lib/mysql", 
+            "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
+            "size_available": 200065097728, 
             "size_total": 245058105344, 
             "uuid": "N/A"
         }
@@ -959,7 +1009,7 @@
     ], 
     "ansible_system_capabilities_enforced": "True", 
     "ansible_system_vendor": "Dell Inc.", 
-    "ansible_uptime_seconds": 99, 
+    "ansible_uptime_seconds": 41062, 
     "ansible_user_dir": "/root", 
     "ansible_user_gecos": "root", 
     "ansible_user_gid": 0, 

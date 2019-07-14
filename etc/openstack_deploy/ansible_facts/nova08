@@ -8,8 +8,12 @@
     "ansible_all_ipv6_addresses": [
         "fe80::3092:22ff:fea6:2fc1", 
         "fe80::d430:9ff:fe39:4d26", 
+        "fe80::148e:57ff:feae:186f", 
+        "fe80::fc52:33ff:feb7:9cf6", 
         "fe80::78af:cdff:fe63:4531", 
         "fe80::60fa:f9ff:fed1:589a", 
+        "fe80::88c6:8bff:fe2a:21da", 
+        "fe80::fcc1:90ff:fe15:ba3b", 
         "fe80::d497:d3ff:feff:b8a7"
     ], 
     "ansible_apparmor": {
@@ -41,6 +45,7 @@
         "device": "br-mgmt", 
         "id": "8000.62faf9d1589a", 
         "interfaces": [
+            "f7ca149f_eth1", 
             "vlan.10"
         ], 
         "ipv4": {
@@ -134,6 +139,26 @@
         "stp": false, 
         "type": "bridge"
     }, 
+    "ansible_br_wan": {
+        "active": true, 
+        "device": "br-wan", 
+        "id": "8000.8ac68b2a21da", 
+        "interfaces": [
+            "vlan.5"
+        ], 
+        "ipv6": [
+            {
+                "address": "fe80::148e:57ff:feae:186f", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
+        "macaddress": "8a:c6:8b:2a:21:da", 
+        "mtu": 1600, 
+        "promisc": false, 
+        "stp": false, 
+        "type": "bridge"
+    }, 
     "ansible_cmdline": {
         "BOOT_IMAGE": "/boot/vmlinuz-4.15.0-50-generic", 
         "quiet": true, 
@@ -145,16 +170,16 @@
     "ansible_date_time": {
         "date": "2019-07-14", 
         "day": "14", 
-        "epoch": "1563080420", 
-        "hour": "01", 
-        "iso8601": "2019-07-14T05:00:20Z", 
-        "iso8601_basic": "20190714T010020149719", 
-        "iso8601_basic_short": "20190714T010020", 
-        "iso8601_micro": "2019-07-14T05:00:20.149794Z", 
-        "minute": "00", 
+        "epoch": "1563122425", 
+        "hour": "12", 
+        "iso8601": "2019-07-14T16:40:25Z", 
+        "iso8601_basic": "20190714T124025988983", 
+        "iso8601_basic_short": "20190714T124025", 
+        "iso8601_micro": "2019-07-14T16:40:25.989060Z", 
+        "minute": "40", 
         "month": "07", 
-        "second": "20", 
-        "time": "01:00:20", 
+        "second": "25", 
+        "time": "12:40:25", 
         "tz": "EDT", 
         "tz_offset": "-0400", 
         "weekday": "Sunday", 
@@ -858,13 +883,45 @@
         "PWD": "/root", 
         "SHELL": "/bin/bash", 
         "SHLVL": "1", 
-        "SSH_AUTH_SOCK": "/tmp/ssh-HcguPIM59T/agent.2483", 
-        "SSH_CLIENT": "10.0.10.201 35480 22", 
-        "SSH_CONNECTION": "10.0.10.201 35480 10.0.10.8 22", 
+        "SSH_AUTH_SOCK": "/tmp/ssh-K6RmPRJ5n9/agent.21677", 
+        "SSH_CLIENT": "10.0.10.201 53744 22", 
+        "SSH_CONNECTION": "10.0.10.201 53744 10.0.10.8 22", 
         "USER": "root", 
         "XDG_RUNTIME_DIR": "/run/user/0", 
-        "XDG_SESSION_ID": "1480", 
+        "XDG_SESSION_ID": "2213", 
         "_": "/bin/sh"
+    }, 
+    "ansible_f7ca149f_eth0": {
+        "active": true, 
+        "device": "f7ca149f_eth0", 
+        "ipv6": [
+            {
+                "address": "fe80::fc52:33ff:feb7:9cf6", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
+        "macaddress": "fe:52:33:b7:9c:f6", 
+        "mtu": 1500, 
+        "promisc": true, 
+        "speed": 10000, 
+        "type": "ether"
+    }, 
+    "ansible_f7ca149f_eth1": {
+        "active": true, 
+        "device": "f7ca149f_eth1", 
+        "ipv6": [
+            {
+                "address": "fe80::fcc1:90ff:fe15:ba3b", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
+        "macaddress": "fe:c1:90:15:ba:3b", 
+        "mtu": 1600, 
+        "promisc": true, 
+        "speed": 10000, 
+        "type": "ether"
     }, 
     "ansible_fips": false, 
     "ansible_form_factor": "Rack Mount Chassis", 
@@ -872,24 +929,24 @@
     "ansible_geth0": {
         "active": true, 
         "device": "geth0", 
-        "macaddress": "78:2b:cb:63:87:69", 
+        "macaddress": "8a:c6:8b:2a:21:da", 
         "module": "bnx2", 
         "mtu": 1600, 
         "pciid": "0000:01:00.0", 
         "perm_macaddress": "78:2b:cb:63:87:69", 
-        "promisc": false, 
+        "promisc": true, 
         "speed": 1000, 
         "type": "ether"
     }, 
     "ansible_geth1": {
         "active": true, 
         "device": "geth1", 
-        "macaddress": "8a:c6:8b:2a:21:da", 
+        "macaddress": "78:2b:cb:63:87:69", 
         "module": "bnx2", 
         "mtu": 1600, 
         "pciid": "0000:01:00.1", 
         "perm_macaddress": "78:2b:cb:63:87:6b", 
-        "promisc": true, 
+        "promisc": false, 
         "speed": 1000, 
         "type": "ether"
     }, 
@@ -919,19 +976,23 @@
     }, 
     "ansible_hostname": "nova08", 
     "ansible_interfaces": [
+        "f7ca149f_eth0", 
+        "f7ca149f_eth1", 
         "lxcbr0", 
         "bond-mgmt", 
         "tgeth0", 
         "br-vxlan", 
         "lo", 
+        "br-wan", 
         "br-vlan", 
         "br-storage", 
         "vlan.30", 
         "geth1", 
         "geth0", 
+        "vlan.5", 
+        "br-mgmt", 
         "geth3", 
         "geth2", 
-        "br-mgmt", 
         "vlan.10"
     ], 
     "ansible_kernel": "4.15.0-50-generic", 
@@ -969,10 +1030,12 @@
         "vgs": {}
     }, 
     "ansible_lxcbr0": {
-        "active": false, 
+        "active": true, 
         "device": "lxcbr0", 
-        "id": "8000.000000000000", 
-        "interfaces": [], 
+        "id": "8000.fe5233b79cf6", 
+        "interfaces": [
+            "f7ca149f_eth0"
+        ], 
         "ipv4": {
             "address": "10.0.3.1", 
             "broadcast": "10.0.3.255", 
@@ -986,6 +1049,7 @@
                 "scope": "link"
             }
         ], 
+        "macaddress": "fe:52:33:b7:9c:f6", 
         "mtu": 1500, 
         "promisc": false, 
         "stp": false, 
@@ -993,16 +1057,16 @@
     }, 
     "ansible_machine": "x86_64", 
     "ansible_machine_id": "1977f6f063f644228d11c097230aef65", 
-    "ansible_memfree_mb": 141492, 
+    "ansible_memfree_mb": 140602, 
     "ansible_memory_mb": {
         "nocache": {
-            "free": 144143, 
-            "used": 905
+            "free": 144009, 
+            "used": 1039
         }, 
         "real": {
-            "free": 141492, 
+            "free": 140602, 
             "total": 145048, 
-            "used": 3556
+            "used": 4446
         }, 
         "swap": {
             "cached": 0, 
@@ -1014,18 +1078,18 @@
     "ansible_memtotal_mb": 145048, 
     "ansible_mounts": [
         {
-            "block_available": 55184648, 
+            "block_available": 54999399, 
             "block_size": 4096, 
             "block_total": 59828639, 
-            "block_used": 4643991, 
+            "block_used": 4829240, 
             "device": "/dev/sda1", 
             "fstype": "ext4", 
-            "inode_available": 15156427, 
+            "inode_available": 15139518, 
             "inode_total": 15269888, 
-            "inode_used": 113461, 
+            "inode_used": 130370, 
             "mount": "/", 
             "options": "rw,relatime,errors=remount-ro,data=ordered", 
-            "size_available": 226036318208, 
+            "size_available": 225277538304, 
             "size_total": 245058105344, 
             "uuid": "c41f3748-6769-4453-ab8d-13dba82a5460"
         }, 
@@ -1217,7 +1281,7 @@
         "speed": 10000, 
         "type": "ether"
     }, 
-    "ansible_uptime_seconds": 85683, 
+    "ansible_uptime_seconds": 127689, 
     "ansible_user_dir": "/root", 
     "ansible_user_gecos": "root", 
     "ansible_user_gid": 0, 
@@ -1240,6 +1304,22 @@
     "ansible_vlan.30": {
         "active": true, 
         "device": "vlan.30", 
+        "macaddress": "8a:c6:8b:2a:21:da", 
+        "mtu": 1600, 
+        "promisc": true, 
+        "speed": 2000, 
+        "type": "ether"
+    }, 
+    "ansible_vlan.5": {
+        "active": true, 
+        "device": "vlan.5", 
+        "ipv6": [
+            {
+                "address": "fe80::88c6:8bff:fe2a:21da", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
         "macaddress": "8a:c6:8b:2a:21:da", 
         "mtu": 1600, 
         "promisc": true, 

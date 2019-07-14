@@ -1,0 +1,10 @@
+---
+horizon_service_region: '{{ service_region }}'
+horizon_enable_magnum_ui: true
+horizon_enable_masakari_ui: true
+horizon_enable_octavia_ui: true
+horizon_enable_trove_ui: true
+horizon_enable_heat_ui: true
+horizon_enable_neutron_lbaas: true
+horizon_enable_neutron_fwaas: true
+horizon_enable_neutron_vpnaas: true

@@ -1,0 +1,24 @@
+---
+ceph_extra_confs:
+  - src: /etc/ceph/ceph.conf
+    dest: /etc/ceph/ceph.conf
+    client_name: cinder-nova
+    keyring_src: /home/ops/ritsec-ceph/ceph.client.cinder-nova.keyring
+    keyring_dest: /etc/ceph/ceph.client.cinder-nova.keyring
+    secret_uuid: '{{ cinder_rbd_secret_uuid }}'
+  - src: /etc/ceph/ceph.conf
+    dest: /etc/ceph/ceph.conf
+    client_name: glance
+    keyring_src: /home/ops/ritsec-ceph/ceph.client.glance.keyring
+    keyring_dest: /etc/ceph/ceph.client.glance.keyring
+  - src: /etc/ceph/ceph.conf
+    dest: /etc/ceph/ceph.conf
+    client_name: gnocchi
+    keyring_src: /home/ops/ritsec-ceph/ceph.client.gnocchi.keyring
+    keyring_dest: /etc/ceph/ceph.client.gnocchi.keyring
+ceph_extra_components:
+  - component: gnocchi_api
+    package: "{{ python_ceph_packages }}"
+    client:
+      - '{{ gnocchi_ceph_client }}'
+    service: '{{ ceph_gnocchi_service_names }}'
