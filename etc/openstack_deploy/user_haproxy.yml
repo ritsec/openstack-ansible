@@ -1,7 +1,7 @@
 ---
 haproxy_ssl_letsencrypt_enable: true
 haproxy_ssl_letsencrypt_email: "sxn6296@rit.edu"
-haproxy_keepalived_external_vip_cidr: 129.21.228.0/24
-haproxy_keepalived_internal_vip_cidr: 10.0.10.0/24
+haproxy_keepalived_external_vip_cidr: 129.21.228.193/24
+haproxy_keepalived_internal_vip_cidr: 10.0.10.100/24
 haproxy_keepalived_external_interface: br-mgmt
 haproxy_keepalived_internal_interface: br-mgmt
