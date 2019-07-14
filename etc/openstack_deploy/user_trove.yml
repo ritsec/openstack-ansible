@@ -1,0 +1,3 @@
+---
+trove_service_region: '{{ service_region }}'
+trove_ceilometer_enabled: true
