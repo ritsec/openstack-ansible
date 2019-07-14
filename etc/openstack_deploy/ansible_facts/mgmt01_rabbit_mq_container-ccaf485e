@@ -3,7 +3,10 @@
         "10.0.10.48", 
         "10.0.3.149"
     ], 
-    "ansible_all_ipv6_addresses": [], 
+    "ansible_all_ipv6_addresses": [
+        "fe80::216:3eff:fe9b:f796", 
+        "fe80::216:3eff:feee:5390"
+    ], 
     "ansible_apparmor": {
         "status": "disabled"
     }, 
@@ -23,16 +26,16 @@
     "ansible_date_time": {
         "date": "2019-07-14", 
         "day": "14", 
-        "epoch": "1563081407", 
-        "hour": "05", 
-        "iso8601": "2019-07-14T05:16:47Z", 
-        "iso8601_basic": "20190714T051647087472", 
-        "iso8601_basic_short": "20190714T051647", 
-        "iso8601_micro": "2019-07-14T05:16:47.087652Z", 
-        "minute": "16", 
+        "epoch": "1563123435", 
+        "hour": "16", 
+        "iso8601": "2019-07-14T16:57:15Z", 
+        "iso8601_basic": "20190714T165715906779", 
+        "iso8601_basic_short": "20190714T165715", 
+        "iso8601_micro": "2019-07-14T16:57:15.906909Z", 
+        "minute": "57", 
         "month": "07", 
-        "second": "47", 
-        "time": "05:16:47", 
+        "second": "15", 
+        "time": "16:57:15", 
         "tz": "UTC", 
         "tz_offset": "+0000", 
         "weekday": "Sunday", 
@@ -677,7 +680,7 @@
         "SHLVL": "1", 
         "USER": "root", 
         "XDG_RUNTIME_DIR": "/run/user/0", 
-        "XDG_SESSION_ID": "92838", 
+        "XDG_SESSION_ID": "4201", 
         "_": "/bin/sh"
     }, 
     "ansible_eth0": {
@@ -689,6 +692,13 @@
             "netmask": "255.255.255.0", 
             "network": "10.0.3.0"
         }, 
+        "ipv6": [
+            {
+                "address": "fe80::216:3eff:feee:5390", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
         "macaddress": "00:16:3e:ee:53:90", 
         "mtu": 1500, 
         "promisc": false, 
@@ -704,6 +714,13 @@
             "netmask": "255.255.255.0", 
             "network": "10.0.10.0"
         }, 
+        "ipv6": [
+            {
+                "address": "fe80::216:3eff:fe9b:f796", 
+                "prefix": "64", 
+                "scope": "link"
+            }
+        ], 
         "macaddress": "00:16:3e:9b:f7:96", 
         "mtu": 1600, 
         "promisc": false, 
@@ -756,16 +773,16 @@
     }, 
     "ansible_machine": "x86_64", 
     "ansible_machine_id": "082cf54b510a4ec892b1bcc3e880310a", 
-    "ansible_memfree_mb": 48234, 
+    "ansible_memfree_mb": 47962, 
     "ansible_memory_mb": {
         "nocache": {
-            "free": 48238, 
-            "used": 46
+            "free": 48142, 
+            "used": 142
         }, 
         "real": {
-            "free": 48234, 
+            "free": 47962, 
             "total": 48284, 
-            "used": 50
+            "used": 322
         }, 
         "swap": {
             "cached": 0, 
@@ -777,50 +794,66 @@
     "ansible_memtotal_mb": 48284, 
     "ansible_mounts": [
         {
-            "block_available": 50196747, 
+            "block_available": 48636350, 
             "block_size": 4096, 
             "block_total": 59828639, 
-            "block_used": 9631892, 
+            "block_used": 11192289, 
             "device": "/dev/sda1", 
             "fstype": "ext4", 
-            "inode_available": 14781139, 
+            "inode_available": 14736414, 
             "inode_total": 15269888, 
-            "inode_used": 488749, 
+            "inode_used": 533474, 
             "mount": "/", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 205605875712, 
+            "size_available": 199214489600, 
             "size_total": 245058105344, 
             "uuid": "N/A"
         }, 
         {
-            "block_available": 50196747, 
+            "block_available": 48636350, 
             "block_size": 4096, 
             "block_total": 59828639, 
-            "block_used": 9631892, 
+            "block_used": 11192289, 
             "device": "/dev/sda1", 
             "fstype": "ext4", 
-            "inode_available": 14781139, 
+            "inode_available": 14736414, 
             "inode_total": 15269888, 
-            "inode_used": 488749, 
+            "inode_used": 533474, 
             "mount": "/var/backup", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 205605875712, 
+            "size_available": 199214489600, 
             "size_total": 245058105344, 
             "uuid": "N/A"
         }, 
         {
-            "block_available": 50196747, 
+            "block_available": 48636350, 
             "block_size": 4096, 
             "block_total": 59828639, 
-            "block_used": 9631892, 
+            "block_used": 11192289, 
             "device": "/dev/sda1", 
             "fstype": "ext4", 
-            "inode_available": 14781139, 
+            "inode_available": 14736414, 
             "inode_total": 15269888, 
-            "inode_used": 488749, 
+            "inode_used": 533474, 
             "mount": "/var/log/journal/082cf54b510a4ec892b1bcc3e880310a", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 205605875712, 
+            "size_available": 199214489600, 
+            "size_total": 245058105344, 
+            "uuid": "N/A"
+        }, 
+        {
+            "block_available": 48636350, 
+            "block_size": 4096, 
+            "block_total": 59828639, 
+            "block_used": 11192289, 
+            "device": "/dev/sda1", 
+            "fstype": "ext4", 
+            "inode_available": 14736414, 
+            "inode_total": 15269888, 
+            "inode_used": 533474, 
+            "mount": "/var/log", 
+            "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
+            "size_available": 199214489600, 
             "size_total": 245058105344, 
             "uuid": "N/A"
         }
@@ -956,7 +989,7 @@
     ], 
     "ansible_system_capabilities_enforced": "True", 
     "ansible_system_vendor": "Dell Inc.", 
-    "ansible_uptime_seconds": 95, 
+    "ansible_uptime_seconds": 38267, 
     "ansible_user_dir": "/root", 
     "ansible_user_gecos": "root", 
     "ansible_user_gid": 0, 
