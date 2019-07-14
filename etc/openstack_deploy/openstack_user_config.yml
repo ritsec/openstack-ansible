@@ -19,13 +19,13 @@ used_ips: # IP Addrs that are already used on each network
 
 global_overrides:
   security_login_banner_text: |
-###############################################################################
-#                                  NOTICE                                     #
-#                                                                             #
-#   This is an RITSEC Cloud system. It is managed by the RITSEC Operations    #
-#   program. If you have not been explictly granted access to this system     #
-#   by an RITSEC Operations Program member, DISCONNECT IMMEDIATELY!           #
-##############################################################################
+===============================================================================
+=                                  NOTICE                                     =
+=                                                                             =
+=   This is an RITSEC Cloud system. It is managed by the RITSEC Operations    =
+=   program. If you have not been explictly granted access to this system     =
+=   by an RITSEC Operations Program member, DISCONNECT IMMEDIATELY!           =
+===============================================================================
 
   security_sshd_client_alive_interval: 600
   security_sshd_client_alive_count_max: 2
