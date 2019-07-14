@@ -20,6 +20,7 @@ used_ips: # IP Addrs that are already used on each network
 global_overrides:
   security_sshd_client_alive_interval: 600
   security_sshd_client_alive_count_max: 2
+  security_rhel7_session_timeout: 0
   cidr_networks: *cidr_networks
   internal_lb_vip_address: 10.0.10.201
   external_lb_vip_address: www.ritsec.cloud
@@ -61,6 +62,12 @@ global_overrides:
           - cinder_volume
           - nova_compute
           - ceph-osd
+    - network:
+        container_bridge: "br-wan"
+        container_type: "veth"
+        container_interface: "eth3"
+        type: "flat"
+        net_name: "wan"
 
 # Controller Nodes
 controller_hosts: &controller_hosts

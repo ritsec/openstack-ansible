@@ -1,0 +1,13 @@
+---
+neutron_dns_domain: ritsec.co.
+neutron_service_region: '{{ service_region }}'
+neutron_ceilometer_enabled: true
+neutron_designate_enabled: true
+neutron_allow_reverse_dns_lookup: false
+neutron_plugin_base:
+  - router
+  - metering
+  - firewall_v2
+  - neutron_lbaas.services.loadbalancer.plugin.LoadBalancerPluginv2
+  - vpnaas
+  - dns
