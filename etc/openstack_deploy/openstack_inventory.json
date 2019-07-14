@@ -128,6 +128,26 @@
                     "is_metal": false
                 }
             },
+            "mgmt01_designate_container-99e8c041": {
+                "ansible_host": "10.0.10.192",
+                "component": "designate_api",
+                "container_address": "10.0.10.192",
+                "container_name": "mgmt01_designate_container-99e8c041",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.192",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt01",
+                "physical_host_group": "dnsaas_hosts",
+                "properties": {}
+            },
             "mgmt01_galera_container-d5411544": {
                 "ansible_host": "10.0.10.212",
                 "component": "galera",
@@ -258,6 +278,46 @@
                 "physical_host_group": "identity_hosts",
                 "properties": {}
             },
+            "mgmt01_magnum_container-d04dd521": {
+                "ansible_host": "10.0.10.180",
+                "component": "magnum",
+                "container_address": "10.0.10.180",
+                "container_name": "mgmt01_magnum_container-d04dd521",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.180",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt01",
+                "physical_host_group": "magnum-infra_hosts",
+                "properties": {}
+            },
+            "mgmt01_masakari_api_container-051e52a3": {
+                "ansible_host": "10.0.10.90",
+                "component": "masakari_engine",
+                "container_address": "10.0.10.90",
+                "container_name": "mgmt01_masakari_api_container-051e52a3",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.90",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt01",
+                "physical_host_group": "masakari-infra_hosts",
+                "properties": {}
+            },
             "mgmt01_memcached_container-c8c9bedb": {
                 "ansible_host": "10.0.10.190",
                 "component": "memcached",
@@ -298,6 +358,26 @@
                 "physical_host_group": "network_hosts",
                 "properties": {}
             },
+            "mgmt01_octavia_server_container-d5a39773": {
+                "ansible_host": "10.0.10.198",
+                "component": "octavia-api",
+                "container_address": "10.0.10.198",
+                "container_name": "mgmt01_octavia_server_container-d5a39773",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.198",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt01",
+                "physical_host_group": "octavia-infra_hosts",
+                "properties": {}
+            },
             "mgmt01_rabbit_mq_container-55e77dc7": {
                 "ansible_host": "10.0.10.152",
                 "component": "rabbitmq",
@@ -336,6 +416,26 @@
                 "container_tech": "lxc",
                 "physical_host": "mgmt01",
                 "physical_host_group": "repo-infra_hosts",
+                "properties": {}
+            },
+            "mgmt01_trove_api_container-4212a2ca": {
+                "ansible_host": "10.0.10.195",
+                "component": "trove_api",
+                "container_address": "10.0.10.195",
+                "container_name": "mgmt01_trove_api_container-4212a2ca",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.195",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt01",
+                "physical_host_group": "trove-infra_hosts",
                 "properties": {}
             },
             "mgmt01_utility_container-4bc4bbf4": {
@@ -485,6 +585,26 @@
                     "is_metal": false
                 }
             },
+            "mgmt02_designate_container-a361737f": {
+                "ansible_host": "10.0.10.23",
+                "component": "designate_api",
+                "container_address": "10.0.10.23",
+                "container_name": "mgmt02_designate_container-a361737f",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.23",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt02",
+                "physical_host_group": "dnsaas_hosts",
+                "properties": {}
+            },
             "mgmt02_galera_container-339cdc1d": {
                 "ansible_host": "10.0.10.58",
                 "component": "galera",
@@ -615,6 +735,46 @@
                 "physical_host_group": "identity_hosts",
                 "properties": {}
             },
+            "mgmt02_magnum_container-630603b2": {
+                "ansible_host": "10.0.10.150",
+                "component": "magnum",
+                "container_address": "10.0.10.150",
+                "container_name": "mgmt02_magnum_container-630603b2",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.150",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt02",
+                "physical_host_group": "magnum-infra_hosts",
+                "properties": {}
+            },
+            "mgmt02_masakari_api_container-6c35a07a": {
+                "ansible_host": "10.0.10.42",
+                "component": "masakari_engine",
+                "container_address": "10.0.10.42",
+                "container_name": "mgmt02_masakari_api_container-6c35a07a",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.42",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt02",
+                "physical_host_group": "masakari-infra_hosts",
+                "properties": {}
+            },
             "mgmt02_memcached_container-272442be": {
                 "ansible_host": "10.0.10.69",
                 "component": "memcached",
@@ -655,6 +815,26 @@
                 "physical_host_group": "network_hosts",
                 "properties": {}
             },
+            "mgmt02_octavia_server_container-cff0c9e9": {
+                "ansible_host": "10.0.10.233",
+                "component": "octavia-api",
+                "container_address": "10.0.10.233",
+                "container_name": "mgmt02_octavia_server_container-cff0c9e9",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.233",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt02",
+                "physical_host_group": "octavia-infra_hosts",
+                "properties": {}
+            },
             "mgmt02_rabbit_mq_container-4230b2ff": {
                 "ansible_host": "10.0.10.121",
                 "component": "rabbitmq",
@@ -693,6 +873,26 @@
                 "container_tech": "lxc",
                 "physical_host": "mgmt02",
                 "physical_host_group": "repo-infra_hosts",
+                "properties": {}
+            },
+            "mgmt02_trove_api_container-97c372f5": {
+                "ansible_host": "10.0.10.211",
+                "component": "trove_api",
+                "container_address": "10.0.10.211",
+                "container_name": "mgmt02_trove_api_container-97c372f5",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.211",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt02",
+                "physical_host_group": "trove-infra_hosts",
                 "properties": {}
             },
             "mgmt02_utility_container-d640c9a1": {
@@ -842,6 +1042,26 @@
                     "is_metal": false
                 }
             },
+            "mgmt03_designate_container-067ed666": {
+                "ansible_host": "10.0.10.37",
+                "component": "designate_api",
+                "container_address": "10.0.10.37",
+                "container_name": "mgmt03_designate_container-067ed666",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.37",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt03",
+                "physical_host_group": "dnsaas_hosts",
+                "properties": {}
+            },
             "mgmt03_galera_container-49e78bfa": {
                 "ansible_host": "10.0.10.200",
                 "component": "galera",
@@ -972,6 +1192,46 @@
                 "physical_host_group": "identity_hosts",
                 "properties": {}
             },
+            "mgmt03_magnum_container-5d0bd412": {
+                "ansible_host": "10.0.10.118",
+                "component": "magnum",
+                "container_address": "10.0.10.118",
+                "container_name": "mgmt03_magnum_container-5d0bd412",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.118",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt03",
+                "physical_host_group": "magnum-infra_hosts",
+                "properties": {}
+            },
+            "mgmt03_masakari_api_container-da943f6f": {
+                "ansible_host": "10.0.10.89",
+                "component": "masakari_engine",
+                "container_address": "10.0.10.89",
+                "container_name": "mgmt03_masakari_api_container-da943f6f",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.89",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt03",
+                "physical_host_group": "masakari-infra_hosts",
+                "properties": {}
+            },
             "mgmt03_memcached_container-d607bd69": {
                 "ansible_host": "10.0.10.186",
                 "component": "memcached",
@@ -1012,6 +1272,26 @@
                 "physical_host_group": "network_hosts",
                 "properties": {}
             },
+            "mgmt03_octavia_server_container-0dc39673": {
+                "ansible_host": "10.0.10.146",
+                "component": "octavia-api",
+                "container_address": "10.0.10.146",
+                "container_name": "mgmt03_octavia_server_container-0dc39673",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.146",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt03",
+                "physical_host_group": "octavia-infra_hosts",
+                "properties": {}
+            },
             "mgmt03_rabbit_mq_container-fabd1537": {
                 "ansible_host": "10.0.10.31",
                 "component": "rabbitmq",
@@ -1050,6 +1330,26 @@
                 "container_tech": "lxc",
                 "physical_host": "mgmt03",
                 "physical_host_group": "repo-infra_hosts",
+                "properties": {}
+            },
+            "mgmt03_trove_api_container-d600df18": {
+                "ansible_host": "10.0.10.48",
+                "component": "trove_api",
+                "container_address": "10.0.10.48",
+                "container_name": "mgmt03_trove_api_container-d600df18",
+                "container_networks": {
+                    "container_address": {
+                        "address": "10.0.10.48",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "1600",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "mgmt03",
+                "physical_host_group": "trove-infra_hosts",
                 "properties": {}
             },
             "mgmt03_utility_container-cf4fa98c": {
@@ -1739,7 +2039,10 @@
                         "type": "raw"
                     }
                 }
-            ]
+            ],
+            "security_login_banner_text": "",
+            "security_sshd_client_alive_count_max": 2,
+            "security_sshd_client_alive_interval": 600
         }
     },
     "all_containers": {
@@ -2203,38 +2506,84 @@
     },
     "designate_api": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_designate_container-99e8c041",
+            "mgmt03_designate_container-067ed666",
+            "mgmt02_designate_container-a361737f"
+        ]
     },
     "designate_central": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_designate_container-99e8c041",
+            "mgmt03_designate_container-067ed666",
+            "mgmt02_designate_container-a361737f"
+        ]
     },
     "designate_container": {
-        "hosts": []
+        "hosts": [
+            "mgmt01_designate_container-99e8c041",
+            "mgmt03_designate_container-067ed666",
+            "mgmt02_designate_container-a361737f"
+        ]
     },
     "designate_mdns": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_designate_container-99e8c041",
+            "mgmt03_designate_container-067ed666",
+            "mgmt02_designate_container-a361737f"
+        ]
     },
     "designate_producer": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_designate_container-99e8c041",
+            "mgmt03_designate_container-067ed666",
+            "mgmt02_designate_container-a361737f"
+        ]
     },
     "designate_sink": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_designate_container-99e8c041",
+            "mgmt03_designate_container-067ed666",
+            "mgmt02_designate_container-a361737f"
+        ]
     },
     "designate_worker": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_designate_container-99e8c041",
+            "mgmt03_designate_container-067ed666",
+            "mgmt02_designate_container-a361737f"
+        ]
+    },
+    "dnsaas_all": {
+        "hosts": [
+            "mgmt01_designate_container-99e8c041",
+            "mgmt01",
+            "mgmt03_designate_container-067ed666",
+            "mgmt03",
+            "mgmt02_designate_container-a361737f",
+            "mgmt02"
+        ]
     },
     "dnsaas_containers": {
-        "children": [],
+        "children": [
+            "mgmt01-host_containers",
+            "mgmt03-host_containers",
+            "mgmt02-host_containers"
+        ],
         "hosts": []
     },
     "dnsaas_hosts": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01",
+            "mgmt03",
+            "mgmt02"
+        ]
     },
     "etcd": {
         "children": [],
@@ -2686,15 +3035,37 @@
     },
     "magnum": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_magnum_container-d04dd521",
+            "mgmt03_magnum_container-5d0bd412",
+            "mgmt02_magnum_container-630603b2"
+        ]
+    },
+    "magnum-infra_all": {
+        "hosts": [
+            "mgmt01",
+            "mgmt01_magnum_container-d04dd521",
+            "mgmt03_magnum_container-5d0bd412",
+            "mgmt03",
+            "mgmt02_magnum_container-630603b2",
+            "mgmt02"
+        ]
     },
     "magnum-infra_containers": {
-        "children": [],
+        "children": [
+            "mgmt01-host_containers",
+            "mgmt03-host_containers",
+            "mgmt02-host_containers"
+        ],
         "hosts": []
     },
     "magnum-infra_hosts": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01",
+            "mgmt03",
+            "mgmt02"
+        ]
     },
     "magnum_all": {
         "children": [
@@ -2703,7 +3074,11 @@
         "hosts": []
     },
     "magnum_container": {
-        "hosts": []
+        "hosts": [
+            "mgmt01_magnum_container-d04dd521",
+            "mgmt03_magnum_container-5d0bd412",
+            "mgmt02_magnum_container-630603b2"
+        ]
     },
     "manila-data_containers": {
         "children": [],
@@ -2760,13 +3135,31 @@
         "children": [],
         "hosts": []
     },
+    "masakari-infra_all": {
+        "hosts": [
+            "mgmt01_masakari_api_container-051e52a3",
+            "mgmt01",
+            "mgmt03_masakari_api_container-da943f6f",
+            "mgmt03",
+            "mgmt02_masakari_api_container-6c35a07a",
+            "mgmt02"
+        ]
+    },
     "masakari-infra_containers": {
-        "children": [],
+        "children": [
+            "mgmt01-host_containers",
+            "mgmt03-host_containers",
+            "mgmt02-host_containers"
+        ],
         "hosts": []
     },
     "masakari-infra_hosts": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01",
+            "mgmt03",
+            "mgmt02"
+        ]
     },
     "masakari-monitor_containers": {
         "children": [],
@@ -2786,14 +3179,26 @@
     },
     "masakari_api": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_masakari_api_container-051e52a3",
+            "mgmt03_masakari_api_container-da943f6f",
+            "mgmt02_masakari_api_container-6c35a07a"
+        ]
     },
     "masakari_api_container": {
-        "hosts": []
+        "hosts": [
+            "mgmt01_masakari_api_container-051e52a3",
+            "mgmt03_masakari_api_container-da943f6f",
+            "mgmt02_masakari_api_container-6c35a07a"
+        ]
     },
     "masakari_engine": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_masakari_api_container-051e52a3",
+            "mgmt03_masakari_api_container-da943f6f",
+            "mgmt02_masakari_api_container-6c35a07a"
+        ]
     },
     "masakari_monitor": {
         "children": [],
@@ -2971,7 +3376,12 @@
             "mgmt01_galera_container-d5411544",
             "mgmt01_gnocchi_container-143b8948",
             "mgmt01_rabbit_mq_container-55e77dc7",
-            "mgmt01_ceilometer_central_container-663d77f2"
+            "mgmt01_ceilometer_central_container-663d77f2",
+            "mgmt01_magnum_container-d04dd521",
+            "mgmt01_designate_container-99e8c041",
+            "mgmt01_trove_api_container-4212a2ca",
+            "mgmt01_masakari_api_container-051e52a3",
+            "mgmt01_octavia_server_container-d5a39773"
         ]
     },
     "mgmt02-host_containers": {
@@ -2990,7 +3400,12 @@
             "mgmt02_galera_container-339cdc1d",
             "mgmt02_gnocchi_container-3630e36f",
             "mgmt02_rabbit_mq_container-4230b2ff",
-            "mgmt02_ceilometer_central_container-0c23e699"
+            "mgmt02_ceilometer_central_container-0c23e699",
+            "mgmt02_magnum_container-630603b2",
+            "mgmt02_designate_container-a361737f",
+            "mgmt02_trove_api_container-97c372f5",
+            "mgmt02_masakari_api_container-6c35a07a",
+            "mgmt02_octavia_server_container-cff0c9e9"
         ]
     },
     "mgmt03-host_containers": {
@@ -3009,7 +3424,12 @@
             "mgmt03_galera_container-49e78bfa",
             "mgmt03_gnocchi_container-b1411e9c",
             "mgmt03_rabbit_mq_container-fabd1537",
-            "mgmt03_ceilometer_central_container-508c32f6"
+            "mgmt03_ceilometer_central_container-508c32f6",
+            "mgmt03_magnum_container-5d0bd412",
+            "mgmt03_designate_container-067ed666",
+            "mgmt03_trove_api_container-d600df18",
+            "mgmt03_masakari_api_container-da943f6f",
+            "mgmt03_octavia_server_container-0dc39673"
         ]
     },
     "mistral-infra_containers": {
@@ -3423,27 +3843,61 @@
     },
     "octavia-api": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_octavia_server_container-d5a39773",
+            "mgmt03_octavia_server_container-0dc39673",
+            "mgmt02_octavia_server_container-cff0c9e9"
+        ]
     },
     "octavia-health-manager": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_octavia_server_container-d5a39773",
+            "mgmt03_octavia_server_container-0dc39673",
+            "mgmt02_octavia_server_container-cff0c9e9"
+        ]
     },
     "octavia-housekeeping": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_octavia_server_container-d5a39773",
+            "mgmt03_octavia_server_container-0dc39673",
+            "mgmt02_octavia_server_container-cff0c9e9"
+        ]
+    },
+    "octavia-infra_all": {
+        "hosts": [
+            "mgmt01_octavia_server_container-d5a39773",
+            "mgmt01",
+            "mgmt03_octavia_server_container-0dc39673",
+            "mgmt03",
+            "mgmt02_octavia_server_container-cff0c9e9",
+            "mgmt02"
+        ]
     },
     "octavia-infra_containers": {
-        "children": [],
+        "children": [
+            "mgmt01-host_containers",
+            "mgmt03-host_containers",
+            "mgmt02-host_containers"
+        ],
         "hosts": []
     },
     "octavia-infra_hosts": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01",
+            "mgmt03",
+            "mgmt02"
+        ]
     },
     "octavia-worker": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_octavia_server_container-d5a39773",
+            "mgmt03_octavia_server_container-0dc39673",
+            "mgmt02_octavia_server_container-cff0c9e9"
+        ]
     },
     "octavia_all": {
         "children": [
@@ -3455,7 +3909,11 @@
         "hosts": []
     },
     "octavia_server_container": {
-        "hosts": []
+        "hosts": [
+            "mgmt01_octavia_server_container-d5a39773",
+            "mgmt03_octavia_server_container-0dc39673",
+            "mgmt02_octavia_server_container-cff0c9e9"
+        ]
     },
     "opendaylight": {
         "children": [],
@@ -3882,13 +4340,31 @@
         "children": [],
         "hosts": []
     },
+    "trove-infra_all": {
+        "hosts": [
+            "mgmt01_trove_api_container-4212a2ca",
+            "mgmt01",
+            "mgmt03_trove_api_container-d600df18",
+            "mgmt03",
+            "mgmt02_trove_api_container-97c372f5",
+            "mgmt02"
+        ]
+    },
     "trove-infra_containers": {
-        "children": [],
+        "children": [
+            "mgmt01-host_containers",
+            "mgmt03-host_containers",
+            "mgmt02-host_containers"
+        ],
         "hosts": []
     },
     "trove-infra_hosts": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01",
+            "mgmt03",
+            "mgmt02"
+        ]
     },
     "trove_all": {
         "children": [
@@ -3900,18 +4376,34 @@
     },
     "trove_api": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_trove_api_container-4212a2ca",
+            "mgmt03_trove_api_container-d600df18",
+            "mgmt02_trove_api_container-97c372f5"
+        ]
     },
     "trove_api_container": {
-        "hosts": []
+        "hosts": [
+            "mgmt01_trove_api_container-4212a2ca",
+            "mgmt03_trove_api_container-d600df18",
+            "mgmt02_trove_api_container-97c372f5"
+        ]
     },
     "trove_conductor": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_trove_api_container-4212a2ca",
+            "mgmt03_trove_api_container-d600df18",
+            "mgmt02_trove_api_container-97c372f5"
+        ]
     },
     "trove_taskmanager": {
         "children": [],
-        "hosts": []
+        "hosts": [
+            "mgmt01_trove_api_container-4212a2ca",
+            "mgmt03_trove_api_container-d600df18",
+            "mgmt02_trove_api_container-97c372f5"
+        ]
     },
     "unbound": {
         "children": [],

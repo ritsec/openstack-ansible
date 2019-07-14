@@ -20,6 +20,10 @@
         "ansible_host": "10.0.10.166",
         "container_address": "10.0.10.166"
     },
+    "mgmt01_designate_container-99e8c041": {
+        "ansible_host": "10.0.10.192",
+        "container_address": "10.0.10.192"
+    },
     "mgmt01_galera_container-d5411544": {
         "ansible_host": "10.0.10.212",
         "container_address": "10.0.10.212"
@@ -44,6 +48,14 @@
         "ansible_host": "10.0.10.163",
         "container_address": "10.0.10.163"
     },
+    "mgmt01_magnum_container-d04dd521": {
+        "ansible_host": "10.0.10.180",
+        "container_address": "10.0.10.180"
+    },
+    "mgmt01_masakari_api_container-051e52a3": {
+        "ansible_host": "10.0.10.90",
+        "container_address": "10.0.10.90"
+    },
     "mgmt01_memcached_container-c8c9bedb": {
         "ansible_host": "10.0.10.190",
         "container_address": "10.0.10.190"
@@ -52,6 +64,10 @@
         "ansible_host": "10.0.10.168",
         "container_address": "10.0.10.168"
     },
+    "mgmt01_octavia_server_container-d5a39773": {
+        "ansible_host": "10.0.10.198",
+        "container_address": "10.0.10.198"
+    },
     "mgmt01_rabbit_mq_container-55e77dc7": {
         "ansible_host": "10.0.10.152",
         "container_address": "10.0.10.152"
@@ -59,6 +75,10 @@
     "mgmt01_repo_container-8dfb67e1": {
         "ansible_host": "10.0.10.79",
         "container_address": "10.0.10.79"
+    },
+    "mgmt01_trove_api_container-4212a2ca": {
+        "ansible_host": "10.0.10.195",
+        "container_address": "10.0.10.195"
     },
     "mgmt01_utility_container-4bc4bbf4": {
         "ansible_host": "10.0.10.171",
@@ -84,6 +104,10 @@
         "ansible_host": "10.0.10.214",
         "container_address": "10.0.10.214"
     },
+    "mgmt02_designate_container-a361737f": {
+        "ansible_host": "10.0.10.23",
+        "container_address": "10.0.10.23"
+    },
     "mgmt02_galera_container-339cdc1d": {
         "ansible_host": "10.0.10.58",
         "container_address": "10.0.10.58"
@@ -108,6 +132,14 @@
         "ansible_host": "10.0.10.33",
         "container_address": "10.0.10.33"
     },
+    "mgmt02_magnum_container-630603b2": {
+        "ansible_host": "10.0.10.150",
+        "container_address": "10.0.10.150"
+    },
+    "mgmt02_masakari_api_container-6c35a07a": {
+        "ansible_host": "10.0.10.42",
+        "container_address": "10.0.10.42"
+    },
     "mgmt02_memcached_container-272442be": {
         "ansible_host": "10.0.10.69",
         "container_address": "10.0.10.69"
@@ -116,6 +148,10 @@
         "ansible_host": "10.0.10.70",
         "container_address": "10.0.10.70"
     },
+    "mgmt02_octavia_server_container-cff0c9e9": {
+        "ansible_host": "10.0.10.233",
+        "container_address": "10.0.10.233"
+    },
     "mgmt02_rabbit_mq_container-4230b2ff": {
         "ansible_host": "10.0.10.121",
         "container_address": "10.0.10.121"
@@ -123,6 +159,10 @@
     "mgmt02_repo_container-175a3cf2": {
         "ansible_host": "10.0.10.22",
         "container_address": "10.0.10.22"
+    },
+    "mgmt02_trove_api_container-97c372f5": {
+        "ansible_host": "10.0.10.211",
+        "container_address": "10.0.10.211"
     },
     "mgmt02_utility_container-d640c9a1": {
         "ansible_host": "10.0.10.142",
@@ -148,6 +188,10 @@
         "ansible_host": "10.0.10.231",
         "container_address": "10.0.10.231"
     },
+    "mgmt03_designate_container-067ed666": {
+        "ansible_host": "10.0.10.37",
+        "container_address": "10.0.10.37"
+    },
     "mgmt03_galera_container-49e78bfa": {
         "ansible_host": "10.0.10.200",
         "container_address": "10.0.10.200"
@@ -172,6 +216,14 @@
         "ansible_host": "10.0.10.187",
         "container_address": "10.0.10.187"
     },
+    "mgmt03_magnum_container-5d0bd412": {
+        "ansible_host": "10.0.10.118",
+        "container_address": "10.0.10.118"
+    },
+    "mgmt03_masakari_api_container-da943f6f": {
+        "ansible_host": "10.0.10.89",
+        "container_address": "10.0.10.89"
+    },
     "mgmt03_memcached_container-d607bd69": {
         "ansible_host": "10.0.10.186",
         "container_address": "10.0.10.186"
@@ -180,6 +232,10 @@
         "ansible_host": "10.0.10.30",
         "container_address": "10.0.10.30"
     },
+    "mgmt03_octavia_server_container-0dc39673": {
+        "ansible_host": "10.0.10.146",
+        "container_address": "10.0.10.146"
+    },
     "mgmt03_rabbit_mq_container-fabd1537": {
         "ansible_host": "10.0.10.31",
         "container_address": "10.0.10.31"
@@ -187,6 +243,10 @@
     "mgmt03_repo_container-3bb8870c": {
         "ansible_host": "10.0.10.115",
         "container_address": "10.0.10.115"
+    },
+    "mgmt03_trove_api_container-d600df18": {
+        "ansible_host": "10.0.10.48",
+        "container_address": "10.0.10.48"
     },
     "mgmt03_utility_container-cf4fa98c": {
         "ansible_host": "10.0.10.215",
