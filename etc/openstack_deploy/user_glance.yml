@@ -1,0 +1,7 @@
+---
+glance_default_store: rbd
+glance_service_region: '{{ service_region }}'
+glance_ceph_client: glance
+glance_rbd_store_pool: glance-hdd
+glance_rbd_store_user: '{{ glance_ceph_client }}'
+glance_rbd_store_chunk_size: 8
