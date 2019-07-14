@@ -1,5 +1,6 @@
-# User secrets file
+# User secrets files
 etc/openstack_deploy/user_secrets.yml
+etc/openstack_deploy/user_secrets_custom.yml
 
 # Compiled source #
 ###################
