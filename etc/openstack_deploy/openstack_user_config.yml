@@ -11,26 +11,18 @@ used_ips: # IP Addrs that are already used on each network
   - "10.0.9.101,10.0.9.110" # Storage - Ceph Public
   - "10.0.9.201,10.0.9.210" # Controller Storage
   - "10.0.10.1,10.0.10.20" # Nova Mgmt
-  - "10.0.10.101,10.0.10.110" # Storage Mgmt
-  - "10.0.10.201,10.0.10.210" # Controller Mgmt
+  - "10.0.10.100,10.0.10.110" # Storage Mgmt
+  - "10.0.10.200,10.0.10.210" # Controller Mgmt
   - "10.0.10.240,10.0.10.254" # Network Devices
   - "10.0.30.1,10.0.30.20" # Nova VXLAN
   - "10.0.30.101,10.0.30.110" # Controller VXLAN
 
 global_overrides:
-  security_login_banner_text: |
-===============================================================================
-=                                  NOTICE                                     =
-=                                                                             =
-=   This is an RITSEC Cloud system. It is managed by the RITSEC Operations    =
-=   program. If you have not been explictly granted access to this system     =
-=   by an RITSEC Operations Program member, DISCONNECT IMMEDIATELY!           =
-===============================================================================
-
   security_sshd_client_alive_interval: 600
   security_sshd_client_alive_count_max: 2
+  security_rhel7_session_timeout: 0
   cidr_networks: *cidr_networks
-  internal_lb_vip_address: "10.0.10.50"
+  internal_lb_vip_address: 10.0.10.201
   external_lb_vip_address: www.ritsec.cloud
   management_bridge: "br-mgmt"
   provider_networks:
@@ -70,6 +62,12 @@ global_overrides:
           - cinder_volume
           - nova_compute
           - ceph-osd
+    - network:
+        container_bridge: "br-wan"
+        container_type: "veth"
+        container_interface: "eth3"
+        type: "flat"
+        net_name: "wan"
 
 # Controller Nodes
 controller_hosts: &controller_hosts

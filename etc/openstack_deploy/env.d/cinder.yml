@@ -1,5 +1,0 @@
----
-container_skel:
-  cinder_volumes_container:
-    properties:
-      is_metal: false
