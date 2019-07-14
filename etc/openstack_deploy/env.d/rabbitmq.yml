@@ -1,3 +1,0 @@
----
-rabbitmq_ssl_self_signed_regen: true
-rabbitmq_ssl_self_signed_subject: '/C=US/ST=New-York/L=Rochester/O=RITSEC Operations Program/CN={{ ansible_hostname }}'

@@ -1,6 +1,6 @@
 ---
-haproxy_ssl_letsencrypt_enable: true
-haproxy_ssl_letsencrypt_email: "sxn6296@rit.edu"
+#haproxy_ssl_letsencrypt_enable: true
+#haproxy_ssl_letsencrypt_email: "sxn6296@rit.edu"
 # TODO: figure this out
 haproxy_keepalived_external_vip_cidr: 10.0.10.0/24
 haproxy_keepalived_internal_vip_cidr: 10.0.10.0/24
