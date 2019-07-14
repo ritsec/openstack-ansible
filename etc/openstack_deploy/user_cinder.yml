@@ -1,6 +1,7 @@
 ---
 cinder_ceilometer_enabled: true
 cinder_service_region: '{{ service_region }}'
+cinder_quota_gigabytes: 100
 container_skel:
   cinder_volumes_container:
     properties:
