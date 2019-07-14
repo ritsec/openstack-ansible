@@ -1,0 +1,3 @@
+---
+galera_monitoring_allowed_source: "10.0.10.0/24"
+galera_monitoring_user_password: "{{ secret_galera_monitoring_user_password }}"
