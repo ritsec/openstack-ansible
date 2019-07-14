@@ -172,3 +172,4 @@ octavia-infra_hosts: *controller_hosts
 
 # trove (databases as a service)
 trove-infra_hosts: *controller_hosts
+

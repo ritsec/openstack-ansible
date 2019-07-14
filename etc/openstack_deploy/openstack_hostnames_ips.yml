@@ -4,236 +4,340 @@
         "ansible_host": "10.0.10.201",
         "container_address": "10.0.10.201"
     },
-    "mgmt01_aodh_container-411c9f38": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_aodh_container-e5871b23": {
+        "ansible_host": "10.0.10.72",
+        "container_address": "10.0.10.72"
     },
-    "mgmt01_ceilometer_central_container-8fdee1d6": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_ceilometer_central_container-663d77f2": {
+        "ansible_host": "10.0.10.170",
+        "container_address": "10.0.10.170"
     },
-    "mgmt01_cinder_api_container-1bd512e9": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_cinder_api_container-054fdf34": {
+        "ansible_host": "10.0.10.159",
+        "container_address": "10.0.10.159"
     },
-    "mgmt01_galera_container-a6ae57c9": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_cinder_volumes_container-a85c7c06": {
+        "ansible_host": "10.0.10.166",
+        "container_address": "10.0.10.166"
     },
-    "mgmt01_glance_container-5ef387c8": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_designate_container-99e8c041": {
+        "ansible_host": "10.0.10.192",
+        "container_address": "10.0.10.192"
     },
-    "mgmt01_gnocchi_container-298a5807": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_galera_container-d5411544": {
+        "ansible_host": "10.0.10.212",
+        "container_address": "10.0.10.212"
     },
-    "mgmt01_heat_api_container-7d0431e3": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_glance_container-f24deea0": {
+        "ansible_host": "10.0.10.75",
+        "container_address": "10.0.10.75"
     },
-    "mgmt01_horizon_container-6ff8b0b4": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_gnocchi_container-143b8948": {
+        "ansible_host": "10.0.10.94",
+        "container_address": "10.0.10.94"
     },
-    "mgmt01_keystone_container-c521ac15": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_heat_api_container-bb62d979": {
+        "ansible_host": "10.0.10.156",
+        "container_address": "10.0.10.156"
     },
-    "mgmt01_memcached_container-3d2713cc": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_horizon_container-22eab396": {
+        "ansible_host": "10.0.10.164",
+        "container_address": "10.0.10.164"
     },
-    "mgmt01_neutron_server_container-fdfd4a1d": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_keystone_container-ad1dac72": {
+        "ansible_host": "10.0.10.163",
+        "container_address": "10.0.10.163"
     },
-    "mgmt01_nova_api_container-b7c5e92b": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_magnum_container-d04dd521": {
+        "ansible_host": "10.0.10.180",
+        "container_address": "10.0.10.180"
     },
-    "mgmt01_rabbit_mq_container-6cfa75c1": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_masakari_api_container-051e52a3": {
+        "ansible_host": "10.0.10.90",
+        "container_address": "10.0.10.90"
     },
-    "mgmt01_repo_container-177f8ab8": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_memcached_container-c8c9bedb": {
+        "ansible_host": "10.0.10.190",
+        "container_address": "10.0.10.190"
     },
-    "mgmt01_utility_container-ba5b4a7e": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt01_neutron_server_container-6cb4818f": {
+        "ansible_host": "10.0.10.168",
+        "container_address": "10.0.10.168"
+    },
+    "mgmt01_octavia_server_container-d5a39773": {
+        "ansible_host": "10.0.10.198",
+        "container_address": "10.0.10.198"
+    },
+    "mgmt01_rabbit_mq_container-55e77dc7": {
+        "ansible_host": "10.0.10.152",
+        "container_address": "10.0.10.152"
+    },
+    "mgmt01_repo_container-8dfb67e1": {
+        "ansible_host": "10.0.10.79",
+        "container_address": "10.0.10.79"
+    },
+    "mgmt01_trove_api_container-4212a2ca": {
+        "ansible_host": "10.0.10.195",
+        "container_address": "10.0.10.195"
+    },
+    "mgmt01_utility_container-4bc4bbf4": {
+        "ansible_host": "10.0.10.171",
+        "container_address": "10.0.10.171"
     },
     "mgmt02": {
         "ansible_host": "10.0.10.202",
         "container_address": "10.0.10.202"
     },
-    "mgmt02_aodh_container-bf57ee5e": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_aodh_container-633a61eb": {
+        "ansible_host": "10.0.10.134",
+        "container_address": "10.0.10.134"
     },
-    "mgmt02_ceilometer_central_container-4644b347": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_ceilometer_central_container-0c23e699": {
+        "ansible_host": "10.0.10.176",
+        "container_address": "10.0.10.176"
     },
-    "mgmt02_cinder_api_container-453d7490": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_cinder_api_container-c36f6dad": {
+        "ansible_host": "10.0.10.183",
+        "container_address": "10.0.10.183"
     },
-    "mgmt02_galera_container-318b939c": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_cinder_volumes_container-d1120749": {
+        "ansible_host": "10.0.10.214",
+        "container_address": "10.0.10.214"
     },
-    "mgmt02_glance_container-c7e38142": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_designate_container-a361737f": {
+        "ansible_host": "10.0.10.23",
+        "container_address": "10.0.10.23"
     },
-    "mgmt02_gnocchi_container-35c95b4f": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_galera_container-339cdc1d": {
+        "ansible_host": "10.0.10.58",
+        "container_address": "10.0.10.58"
     },
-    "mgmt02_heat_api_container-d2f40709": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_glance_container-d893703b": {
+        "ansible_host": "10.0.10.145",
+        "container_address": "10.0.10.145"
     },
-    "mgmt02_horizon_container-9ec7a885": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_gnocchi_container-3630e36f": {
+        "ansible_host": "10.0.10.50",
+        "container_address": "10.0.10.50"
     },
-    "mgmt02_keystone_container-86e14902": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_heat_api_container-2feefd5f": {
+        "ansible_host": "10.0.10.133",
+        "container_address": "10.0.10.133"
     },
-    "mgmt02_memcached_container-75371956": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_horizon_container-7b87f7fa": {
+        "ansible_host": "10.0.10.135",
+        "container_address": "10.0.10.135"
     },
-    "mgmt02_neutron_server_container-b0e15caf": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_keystone_container-87e1c4d4": {
+        "ansible_host": "10.0.10.33",
+        "container_address": "10.0.10.33"
     },
-    "mgmt02_nova_api_container-041a1e03": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_magnum_container-630603b2": {
+        "ansible_host": "10.0.10.150",
+        "container_address": "10.0.10.150"
     },
-    "mgmt02_rabbit_mq_container-19f1005d": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_masakari_api_container-6c35a07a": {
+        "ansible_host": "10.0.10.42",
+        "container_address": "10.0.10.42"
     },
-    "mgmt02_repo_container-5247d42e": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_memcached_container-272442be": {
+        "ansible_host": "10.0.10.69",
+        "container_address": "10.0.10.69"
     },
-    "mgmt02_utility_container-3974ac7f": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt02_neutron_server_container-f49eee39": {
+        "ansible_host": "10.0.10.70",
+        "container_address": "10.0.10.70"
+    },
+    "mgmt02_octavia_server_container-cff0c9e9": {
+        "ansible_host": "10.0.10.233",
+        "container_address": "10.0.10.233"
+    },
+    "mgmt02_rabbit_mq_container-4230b2ff": {
+        "ansible_host": "10.0.10.121",
+        "container_address": "10.0.10.121"
+    },
+    "mgmt02_repo_container-175a3cf2": {
+        "ansible_host": "10.0.10.22",
+        "container_address": "10.0.10.22"
+    },
+    "mgmt02_trove_api_container-97c372f5": {
+        "ansible_host": "10.0.10.211",
+        "container_address": "10.0.10.211"
+    },
+    "mgmt02_utility_container-d640c9a1": {
+        "ansible_host": "10.0.10.142",
+        "container_address": "10.0.10.142"
     },
     "mgmt03": {
         "ansible_host": "10.0.10.203",
         "container_address": "10.0.10.203"
     },
-    "mgmt03_aodh_container-c02ebd3e": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_aodh_container-e12d763c": {
+        "ansible_host": "10.0.10.80",
+        "container_address": "10.0.10.80"
     },
-    "mgmt03_ceilometer_central_container-979f0688": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_ceilometer_central_container-508c32f6": {
+        "ansible_host": "10.0.10.39",
+        "container_address": "10.0.10.39"
     },
-    "mgmt03_cinder_api_container-0af663d0": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_cinder_api_container-dcbc1e41": {
+        "ansible_host": "10.0.10.179",
+        "container_address": "10.0.10.179"
     },
-    "mgmt03_galera_container-ee19a422": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_cinder_volumes_container-e32ca450": {
+        "ansible_host": "10.0.10.231",
+        "container_address": "10.0.10.231"
     },
-    "mgmt03_glance_container-5dffd715": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_designate_container-067ed666": {
+        "ansible_host": "10.0.10.37",
+        "container_address": "10.0.10.37"
     },
-    "mgmt03_gnocchi_container-20f4f71f": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_galera_container-49e78bfa": {
+        "ansible_host": "10.0.10.200",
+        "container_address": "10.0.10.200"
     },
-    "mgmt03_heat_api_container-a109c4cb": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_glance_container-3abfe742": {
+        "ansible_host": "10.0.10.26",
+        "container_address": "10.0.10.26"
     },
-    "mgmt03_horizon_container-609921e5": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_gnocchi_container-b1411e9c": {
+        "ansible_host": "10.0.10.189",
+        "container_address": "10.0.10.189"
     },
-    "mgmt03_keystone_container-1fd2b1cd": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_heat_api_container-01feb7ac": {
+        "ansible_host": "10.0.10.162",
+        "container_address": "10.0.10.162"
     },
-    "mgmt03_memcached_container-dac06367": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_horizon_container-ccba3863": {
+        "ansible_host": "10.0.10.194",
+        "container_address": "10.0.10.194"
     },
-    "mgmt03_neutron_server_container-803ef61c": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_keystone_container-fff5d491": {
+        "ansible_host": "10.0.10.187",
+        "container_address": "10.0.10.187"
     },
-    "mgmt03_nova_api_container-73e07fbd": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_magnum_container-5d0bd412": {
+        "ansible_host": "10.0.10.118",
+        "container_address": "10.0.10.118"
     },
-    "mgmt03_rabbit_mq_container-534cc46d": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_masakari_api_container-da943f6f": {
+        "ansible_host": "10.0.10.89",
+        "container_address": "10.0.10.89"
     },
-    "mgmt03_repo_container-c05780a4": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_memcached_container-d607bd69": {
+        "ansible_host": "10.0.10.186",
+        "container_address": "10.0.10.186"
     },
-    "mgmt03_utility_container-46ef1aa0": {
-        "ansible_host": null,
-        "container_address": null
+    "mgmt03_neutron_server_container-28b10f53": {
+        "ansible_host": "10.0.10.30",
+        "container_address": "10.0.10.30"
+    },
+    "mgmt03_octavia_server_container-0dc39673": {
+        "ansible_host": "10.0.10.146",
+        "container_address": "10.0.10.146"
+    },
+    "mgmt03_rabbit_mq_container-fabd1537": {
+        "ansible_host": "10.0.10.31",
+        "container_address": "10.0.10.31"
+    },
+    "mgmt03_repo_container-3bb8870c": {
+        "ansible_host": "10.0.10.115",
+        "container_address": "10.0.10.115"
+    },
+    "mgmt03_trove_api_container-d600df18": {
+        "ansible_host": "10.0.10.48",
+        "container_address": "10.0.10.48"
+    },
+    "mgmt03_utility_container-cf4fa98c": {
+        "ansible_host": "10.0.10.215",
+        "container_address": "10.0.10.215"
     },
     "nova01": {
         "ansible_host": "10.0.10.1",
         "container_address": "10.0.10.1"
     },
+    "nova01_nova_api_container-b0d91731": {
+        "ansible_host": "10.0.10.85",
+        "container_address": "10.0.10.85"
+    },
     "nova02": {
         "ansible_host": "10.0.10.2",
         "container_address": "10.0.10.2"
+    },
+    "nova02_nova_api_container-aa96af6f": {
+        "ansible_host": "10.0.10.219",
+        "container_address": "10.0.10.219"
     },
     "nova03": {
         "ansible_host": "10.0.10.3",
         "container_address": "10.0.10.3"
     },
+    "nova03_nova_api_container-76a21cbd": {
+        "ansible_host": "10.0.10.116",
+        "container_address": "10.0.10.116"
+    },
     "nova04": {
         "ansible_host": "10.0.10.4",
         "container_address": "10.0.10.4"
+    },
+    "nova04_nova_api_container-bb5cc707": {
+        "ansible_host": "10.0.10.158",
+        "container_address": "10.0.10.158"
     },
     "nova05": {
         "ansible_host": "10.0.10.5",
         "container_address": "10.0.10.5"
     },
+    "nova05_nova_api_container-c9afa53d": {
+        "ansible_host": "10.0.10.213",
+        "container_address": "10.0.10.213"
+    },
     "nova07": {
         "ansible_host": "10.0.10.7",
         "container_address": "10.0.10.7"
+    },
+    "nova07_nova_api_container-f332b4f2": {
+        "ansible_host": "10.0.10.228",
+        "container_address": "10.0.10.228"
     },
     "nova08": {
         "ansible_host": "10.0.10.8",
         "container_address": "10.0.10.8"
     },
+    "nova08_nova_api_container-e84cc61b": {
+        "ansible_host": "10.0.10.54",
+        "container_address": "10.0.10.54"
+    },
     "nova09": {
         "ansible_host": "10.0.10.9",
         "container_address": "10.0.10.9"
+    },
+    "nova09_nova_api_container-c5139d91": {
+        "ansible_host": "10.0.10.143",
+        "container_address": "10.0.10.143"
     },
     "nova10": {
         "ansible_host": "10.0.10.10",
         "container_address": "10.0.10.10"
     },
+    "nova10_nova_api_container-6c3efb3e": {
+        "ansible_host": "10.0.10.91",
+        "container_address": "10.0.10.91"
+    },
     "nova11": {
         "ansible_host": "10.0.10.11",
         "container_address": "10.0.10.11"
     },
+    "nova11_nova_api_container-f29ed0e0": {
+        "ansible_host": "10.0.10.155",
+        "container_address": "10.0.10.155"
+    },
     "nova12": {
         "ansible_host": "10.0.10.12",
         "container_address": "10.0.10.12"
+    },
+    "nova12_nova_api_container-7040feaf": {
+        "ansible_host": "10.0.10.173",
+        "container_address": "10.0.10.173"
     }
 }
