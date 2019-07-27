@@ -2,28 +2,37 @@
 cinder_ceilometer_enabled: true
 cinder_service_region: '{{ service_region }}'
 cinder_quota_gigabytes: 100
+cinder_ceph_client: cinder-nova
+cinder_storage_availability_zone: cinderAZ_1
+cinder_default_availability_zone: cinderAZ_1
 container_skel:
   cinder_volumes_container:
     properties:
       is_metal: false
 cinder_backends:
-  cinder_ssd:
-    volume_name: cinder_ssd
+  ceph-ssd:
+    volume_name: ceph-ssd
     volume_driver: cinder.volume.drivers.rbd.RBDDriver
     rbd_pool: cinder-ssd
     rbd_ceph_conf: /etc/ceph/ceph.conf
-    rbd_store_chunk_size: 8
-    volume_backend_name: rbddriver
+    rbd_store_chunk_size: 4
+    volume_backend_name: CEPH-SSD
     rbd_user: cinder-nova
     rbd_secret_uuid: '{{ cinder_rbd_secret_uuid }}'
     report_discard_supported: true
-  cinder_hdd:
-    volume_name: cinder_hdd
+    rbd_max_clone_depth: 5
+    rbd_flatten_volume_from_snapshot: false
+    rados_connect_timeout: 30
+  ceph-hdd:
+    volume_name: ceph-hdd
     volume_driver: cinder.volume.drivers.rbd.RBDDriver
     rbd_pool: cinder-hdd
     rbd_ceph_conf: /etc/ceph/ceph.conf
-    rbd_store_chunk_size: 8
-    volume_backend_name: rbddriver
+    rbd_store_chunk_size: 4
+    volume_backend_name: CEPH-HDD
     rbd_user: cinder-nova
     rbd_secret_uuid: '{{ cinder_rbd_secret_uuid }}'
     report_discard_supported: true
+    rbd_max_clone_depth: 5
+    rbd_flatten_volume_from_snapshot: false
+    rados_connect_timeout: 30
