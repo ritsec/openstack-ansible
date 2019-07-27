@@ -3,10 +3,12 @@ neutron_dns_domain: ritsec.co.
 neutron_service_region: '{{ service_region }}'
 neutron_ceilometer_enabled: true
 neutron_allow_reverse_dns_lookup: false
+neutron_l2_population: true
+neutron_dnsmasq_dns_servers: "10.0.10.201,10.0.10.202,10.0.10.203"
 neutron_plugin_base:
   - router
   - metering
-  - firewall_v2
-  - neutron_lbaas.services.loadbalancer.plugin.LoadBalancerPluginv2
-  - vpnaas
-  - dns
+    #- firewall_v2
+    #- vpnaas
+    #- dns
+  - qos
