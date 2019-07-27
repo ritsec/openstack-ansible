@@ -150,7 +150,7 @@ image_hosts: *controller_hosts
 compute-infra_hosts: *compute_hosts
 
 # heat
-orchestration_hosts: *controller_hosts
+#orchestration_hosts: *controller_hosts
 
 # horizon
 dashboard_hosts: *controller_hosts
@@ -171,17 +171,19 @@ metrics_hosts: *controller_hosts
 metering-compute_hosts: *compute_hosts
 
 # designate (DNS as a service)
-dnsaas_hosts: *controller_hosts
+#dnsaas_hosts: *controller_hosts
 
 # magnum (Deployment and management of docker swarm/k8s)
-magnum-infra_hosts: *controller_hosts
+#magnum-infra_hosts: *controller_hosts
 
 # masakari (Nova instance HA - recovers instances when a Nova node dies)
-masakari-infra_hosts: *controller_hosts
+#masakari-infra_hosts: *controller_hosts
 
 # octavia (reference implementation of Neutron network load balancer)
-octavia-infra_hosts: *controller_hosts
+#octavia-infra_hosts: *controller_hosts
 
 # trove (databases as a service)
-trove-infra_hosts: *controller_hosts
+#trove-infra_hosts: *controller_hosts
 
+# placement (someting required for nova)
+placement-infra_hosts: *compute_hosts
