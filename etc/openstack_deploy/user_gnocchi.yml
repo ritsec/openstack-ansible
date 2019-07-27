@@ -3,3 +3,34 @@ gnocchi_storage_driver: ceph
 gnocchi_ceph_pool: gnocchi-metrics-hdd
 gnocchi_ceph_username: gnocchi
 gnocchi_service_region: '{{ service_region }}'
+
+# THESE NEED TO BE ENABLED WHEN FIRST DEPLOYING GNOCCHI
+#venv_build_distro_package_list: [ "cython", "librados2", "librados-dev" ]
+#venv_rebuild: true # IDK if these affect other things...
+#venv_wheel_build_enable: true
+
+# Optimized settings when using Ceph
+# https://docs.openstack.org/openstack-ansible/latest/user/prod/gnocchi_redis.html
+gnocchi_pip_packages:
+  - cryptography
+  - gnocchiclient
+  - "gnocchi[mysql,ceph,redis]"
+  - keystonemiddleware
+  - python-memcached
+  - redis
+  - tooz
+  - lz4
+  - kazoo
+gnocchi_distro_packages:
+  - apache2
+  - apache2-utils
+  - libapache2-mod-wsgi
+  - git
+  - build-essential
+  - python-dev
+  - libpq-dev
+  - python-rados
+  - cython
+  - librados2
+  - librados-dev
+  - python-redis
