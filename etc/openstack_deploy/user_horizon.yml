@@ -1,10 +1,18 @@
 ---
 horizon_service_region: '{{ service_region }}'
-horizon_enable_magnum_ui: true
-horizon_enable_masakari_ui: true
-horizon_enable_octavia_ui: true
-horizon_enable_trove_ui: true
-horizon_enable_heat_ui: true
-horizon_enable_neutron_lbaas: true
-horizon_enable_neutron_fwaas: true
-horizon_enable_neutron_vpnaas: true
+horizon_enable_ha_router: True
+horizon_default_dns_nameservers: [ 10.0.10.201, 10.0.10.202, 10.0.10.203 ]
+#horizon_enable_magnum_ui: true
+#horizon_enable_masakari_ui: true
+#horizon_enable_octavia_ui: true
+#horizon_enable_trove_ui: true
+#horizon_enable_heat_ui: true
+#horizon_enable_neutron_lbaas: true
+#horizon_enable_neutron_fwaas: true
+#horizon_enable_neutron_vpnaas: true
+#horizon_config_overrides:
+#  OPENSTACK_HYPERVISOR_FEATURES:
+#    can_set_mount_point: False
+#    can_set_password: False
+#    requires_keypair: False
+#    enable_quotas: True

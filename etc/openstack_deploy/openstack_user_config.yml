@@ -13,6 +13,7 @@ used_ips: # IP Addrs that are already used on each network
   - "10.0.10.1,10.0.10.20" # Nova Mgmt
   - "10.0.10.100,10.0.10.110" # Storage Mgmt
   - "10.0.10.200,10.0.10.210" # Controller Mgmt
+  - "10.0.10.220,10.0.10.230" # Random Services We'll Need
   - "10.0.10.240,10.0.10.254" # Network Devices
   - "10.0.30.1,10.0.30.20" # Nova VXLAN
   - "10.0.30.101,10.0.30.110" # Controller VXLAN
@@ -22,7 +23,7 @@ global_overrides:
   security_sshd_client_alive_count_max: 2
   security_rhel7_session_timeout: 0
   cidr_networks: *cidr_networks
-  internal_lb_vip_address: 10.0.10.201
+  internal_lb_vip_address: 10.0.10.220
   # 129.21.228.193 (.254)
   external_lb_vip_address: stack.ritsec.cloud
   management_bridge: "br-mgmt"
@@ -34,6 +35,7 @@ global_overrides:
         ip_from_q: "container"
         type: "raw"
         container_mtu: "1600"
+        net_name: "management"
         group_binds:
           - all_containers
           - hosts
@@ -46,8 +48,7 @@ global_overrides:
         ip_from_q: "tunnel"
         type: "vxlan"
         container_mtu: "1600"
-        range: "1:2000"
-        net_name: "vxlan"
+        range: "1:3000"
         group_binds:
           - neutron_linuxbridge_agent
     - network:
@@ -69,6 +70,18 @@ global_overrides:
         container_interface: "eth3"
         type: "flat"
         net_name: "wan"
+        group_binds:
+          - neutron_linuxbridge_agent
+    - network:
+        container_bridge: "br-vlan"
+        host_bind_override: "bond-mgmt"
+        container_type: "veth"
+        container_interface: "eth4"
+        type: "vlan"
+        net_name: "vlan"
+        range: "5:30"
+        group_binds:
+          - neutron_linuxbridge_agent
 
 # Controller Nodes
 controller_hosts: &controller_hosts
@@ -137,7 +150,7 @@ image_hosts: *controller_hosts
 compute-infra_hosts: *compute_hosts
 
 # heat
-orchestration_hosts: *controller_hosts
+#orchestration_hosts: *controller_hosts
 
 # horizon
 dashboard_hosts: *controller_hosts
@@ -158,17 +171,19 @@ metrics_hosts: *controller_hosts
 metering-compute_hosts: *compute_hosts
 
 # designate (DNS as a service)
-dnsaas_hosts: *controller_hosts
+#dnsaas_hosts: *controller_hosts
 
 # magnum (Deployment and management of docker swarm/k8s)
-magnum-infra_hosts: *controller_hosts
+#magnum-infra_hosts: *controller_hosts
 
 # masakari (Nova instance HA - recovers instances when a Nova node dies)
-masakari-infra_hosts: *controller_hosts
+#masakari-infra_hosts: *controller_hosts
 
 # octavia (reference implementation of Neutron network load balancer)
-octavia-infra_hosts: *controller_hosts
+#octavia-infra_hosts: *controller_hosts
 
 # trove (databases as a service)
-trove-infra_hosts: *controller_hosts
+#trove-infra_hosts: *controller_hosts
 
+# placement (someting required for nova)
+placement-infra_hosts: *compute_hosts

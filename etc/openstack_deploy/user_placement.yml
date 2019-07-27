@@ -1,0 +1,4 @@
+---
+placement_service_password: '{{ nova_placement_service_password }}'
+placement_service_region: '{{ service_region }}'
+
