@@ -1,6 +1,16 @@
 ---
-nova_ceilometer_enaled: true
+nova_ceilometer_enabled: true
 nova_service_region: '{{ service_region }}'
 nova_nested_virt_enabled: true
 nova_ceph_client_uuid: '{{ cinder_rbd_secret_uuid }}'
 nova_cinder_rbd_inuse: true
+nova_libvirt_images_rbd_pool: cinder-hdd
+nova_cross_az_attach: true
+
+# Ceph tunings
+nova_libvirt_hw_disk_discard: unmap
+nova_libvirt_disk_cachemodes: network=writeback
+
+nova_nova_conf_overrides:
+  libvirt:
+    live_migration_flag: VIR_MIGRATE_UNDEFINE_SOURCE,VIR_MIGRATE_PEER2PEER,VIR_MIGRATE_LIVE,VIR_MIGRATE_PERSIST_DEST,VIR_MIGRATE_TUNNELLED
