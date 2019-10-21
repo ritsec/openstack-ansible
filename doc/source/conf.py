@@ -66,8 +66,8 @@ with open(os.path.join(CONF_PATH, GNOCCHI_DETAILS), 'r') as fdesc:
     gnocchi_branch = gnocchi_file_content['gnocchi_git_track_branch']
 
 # References variable for substitutions
-deploy_guide_prefix = "http://docs.openstack.org/project-deploy-guide/openstack-ansible/{}/%s".format(current_series)
-dev_docs_prefix = "http://docs.openstack.org/openstack-ansible/{}/%s".format(current_series)
+deploy_guide_prefix = "https://docs.openstack.org/project-deploy-guide/openstack-ansible/{}/%s".format(current_series)
+dev_docs_prefix = "https://docs.openstack.org/openstack-ansible/{}/%s".format(current_series)
 
 # Substitutions loader
 rst_epilog = """
@@ -109,7 +109,8 @@ sys.path.insert(0, os.path.abspath('../../inventory/'))
 extensions = [
     'openstackdocstheme',
     'sphinx.ext.autodoc',
-    'sphinx.ext.extlinks'
+    'sphinx.ext.extlinks',
+    'sphinxcontrib.rsvgconverter'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -278,9 +279,11 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, target_name + '.tex',
+    (master_doc, 'doc-' + target_name + '.tex',
      title, author, 'manual'),
 ]
+
+latex_use_xindy = False
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.

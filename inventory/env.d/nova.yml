@@ -53,9 +53,7 @@ container_skel:
     belongs_to:
       - compute_containers
       - kvm-compute_containers
-      - lxd-compute_containers
       - qemu-compute_containers
-      - powervm-compute_containers
     contains:
       - neutron_linuxbridge_agent
       - neutron_openvswitch_agent
@@ -78,12 +76,6 @@ physical_skel:
   compute_hosts:
     belongs_to:
       - hosts
-  lxd-compute_containers:
-    belongs_to:
-      - all_containers
-  lxd-compute_hosts:
-    belongs_to:
-      - hosts
   kvm-compute_containers:
     belongs_to:
       - all_containers
@@ -94,11 +86,5 @@ physical_skel:
     belongs_to:
       - all_containers
   qemu-compute_hosts:
-    belongs_to:
-      - hosts
-  powervm-compute_containers:
-    belongs_to:
-      - all_containers
-  powervm-compute_hosts:
     belongs_to:
       - hosts

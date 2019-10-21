@@ -355,7 +355,11 @@ def _add_container_hosts(assignment, config, container_name, container_type,
         # Get any set host options
         host_options = config[physical_host_type][host_type]
         affinity = host_options.get('affinity', {})
-        no_containers = host_options.get('no_containers', False)
+        # Try to get no_containers from host_options and
+        # fallback to global_overrides if nothing found
+        no_containers = host_options.get(
+            'no_containers',
+            config['global_overrides'].get('no_containers', False))
         if no_containers:
             properties['is_metal'] = True
 
@@ -602,9 +606,8 @@ def _add_additional_networks(key, inventory, ip_q, q_name, netmask, interface,
         container = base_hosts[container_host]
 
         physical_host = container.get('physical_host')
-        if (reference_group and
-                physical_host not in
-                inventory.get(reference_group).get('hosts')):
+        if (reference_group and physical_host
+                not in inventory.get(reference_group).get('hosts')):
             continue
 
         # TODO(cloudnull) after a few releases this should be removed.
@@ -726,7 +729,7 @@ def container_skel_load(container_skel, inventory, config):
                 q_netmask = '{}_netmask'.format(net_name)
                 provider_queues[q_netmask] = str(net.netmask)
 
-        overrides = config['global_overrides']
+        overrides = config.get('global_overrides', dict())
         # iterate over a list of provider_networks, var=pn
         pns = overrides.get('provider_networks', list())
         for pn in pns:
@@ -1021,8 +1024,8 @@ def _check_config_settings(cidr_networks, config, container_skel):
                     raise SystemExit(
                         "can't find " + q_name + " in cidr_networks"
                     )
-                if (p_net.get('container_bridge') ==
-                        overrides.get('management_bridge')):
+                if (p_net.get('container_bridge') == overrides.get(
+                        'management_bridge')):
                     if not p_net.get('is_container_address'):
                         raise ProviderNetworkMisconfiguration(q_name)
 

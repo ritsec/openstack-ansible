@@ -22,8 +22,9 @@ set -e -u -x
 export HTTP_PROXY=${HTTP_PROXY:-""}
 export HTTPS_PROXY=${HTTPS_PROXY:-""}
 # The Ansible version used for testing
-export ANSIBLE_PACKAGE=${ANSIBLE_PACKAGE:-"ansible==2.8.2"}
+export ANSIBLE_PACKAGE=${ANSIBLE_PACKAGE:-"ansible==2.8.5"}
 export ANSIBLE_ROLE_FILE=${ANSIBLE_ROLE_FILE:-"ansible-role-requirements.yml"}
+export USER_ROLE_FILE=${USER_ROLE_FILE:-"user-role-requirements.yml"}
 export SSH_DIR=${SSH_DIR:-"/root/.ssh"}
 export DEBIAN_FRONTEND=${DEBIAN_FRONTEND:-"noninteractive"}
 # check whether to install the ARA callback plugin
@@ -73,6 +74,10 @@ case ${DISTRO_ID} in
           libselinux-python python-virtualenv
         ;;
     ubuntu|debian)
+        # NOTE(jrosser) remove this once infra debian images point to the upstream security repo
+        if `/bin/grep -q "stretch" /etc/os-release` && [ -f "/etc/apt/sources.list.d/security.list" ]; then
+          echo "deb http://security.debian.org stretch/updates main contrib" > /etc/apt/sources.list.d/security.list
+        fi
         apt-get update
         DEBIAN_FRONTEND=noninteractive apt-get -y install \
           git-core curl gcc netcat \
@@ -85,12 +90,8 @@ case ${DISTRO_ID} in
     opensuse*)
         zypper -n install -l git-core curl autoconf gcc gcc-c++ \
             netcat-openbsd python python-xml python-devel gcc \
-            libffi-devel libopenssl-devel python-setuptools python-virtualenv
-        # Leap 42.3 ships with python3.4 which is not supported by ansible and as
-        # such we are using python2
-        # See https://github.com/ansible/ansible/issues/24180
-        source /etc/os-release
-        [[ ${VERSION} =~ 42 ]] && PYTHON_EXEC_PATH="/usr/bin/python2"
+            libffi-devel libopenssl-devel python-setuptools python-virtualenv \
+            patterns-devel-python-devel_python3
         ;;
 esac
 
@@ -108,9 +109,7 @@ elif [ -n "$HTTP_PROXY" ]; then
   PIP_OPTS+="--proxy $HTTP_PROXY"
 fi
 
-# Force using python2. When python3 and python2 dual stack is supported uncomment the following:
-#PYTHON_EXEC_PATH="${PYTHON_EXEC_PATH:-$(which python3 || which python2 || which python)}"
-PYTHON_EXEC_PATH="${PYTHON_EXEC_PATH:-$(which python2 || which python)}"
+PYTHON_EXEC_PATH="${PYTHON_EXEC_PATH:-$(which python3 || which python2 || which python)}"
 PYTHON_VERSION="$($PYTHON_EXEC_PATH -c 'import sys; print(".".join(map(str, sys.version_info[:3])))')"
 
 # Use https when Python with native SNI support is available
@@ -185,7 +184,7 @@ if [ -f "${ANSIBLE_ROLE_FILE}" ] && [[ -z "${SKIP_OSA_ROLE_CLONE+defined}" ]]; t
 
     pushd scripts
       /opt/ansible-runtime/bin/ansible-playbook get-ansible-role-requirements.yml \
-                       -e role_file="${ANSIBLE_ROLE_FILE}"
+                       -e role_file="${ANSIBLE_ROLE_FILE}" -e user_role_file="${USER_ROLE_FILE}"
     popd
 
     unset ANSIBLE_LIBRARY

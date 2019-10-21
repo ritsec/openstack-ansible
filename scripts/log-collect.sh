@@ -26,6 +26,7 @@
 ## Vars ----------------------------------------------------------------------
 export WORKING_DIR=${WORKING_DIR:-$(pwd)}
 export RUN_ARA=${RUN_ARA:-false}
+export ARA_REPORT_TYPE=${ARA_REPORT_TYPE:-"database"}
 export TESTING_HOME=${TESTING_HOME:-$HOME}
 export TS=$(date +"%H-%M-%S")
 
@@ -37,6 +38,7 @@ export RSYNC_CMD="rsync --archive --copy-links --ignore-errors --quiet --no-perm
 #                  easy for folks to find and adjust items as needed.
 COMMON_ETC_LOG_NAMES="apt \
     apache2 \
+    auditd \
     calico \
     ceph \
     haproxy \
@@ -44,7 +46,7 @@ COMMON_ETC_LOG_NAMES="apt \
     memcached \
     mongodb \
     my.cnf \
-    mysql \
+    mariadb \
     netplan \
     network \
     nginx \
@@ -59,6 +61,7 @@ COMMON_ETC_LOG_NAMES="apt \
     sysconfig/network-scripts \
     sysconfig/network \
     systemd \
+    uwsgi \
     yum \
     yum.repos.d \
     zypp"
@@ -142,7 +145,7 @@ function find_files {
         ! -name '*.html' \
         ! -name '*.subunit' \
         ! -name "*.journal" \
-        ! -name 'ansible.sqlite' | grep -v 'stackviz'
+        ! -name 'ansible.sqlite' | egrep -v 'stackviz|ara-report'
 }
 
 function rename_files {
@@ -171,6 +174,12 @@ mkdir -vp "${WORKING_DIR}/logs"
 store_artifacts /openstack/log/ansible-logging/ "${WORKING_DIR}/logs/ansible"
 store_artifacts /openstack/log/ "${WORKING_DIR}/logs/openstack"
 store_artifacts /var/log/ "${WORKING_DIR}/logs/host"
+
+# Build the ARA static html report if required
+if [[ "$ARA_REPORT_TYPE" == "html" ]]; then
+    echo "Generating ARA static html report."
+    /opt/ansible-runtime/bin/ara generate html "${WORKING_DIR}/logs/ara-report"
+fi
 
 # Store the ara sqlite database in the openstack-ci expected path
 store_artifacts "${TESTING_HOME}/.ara/ansible.sqlite" "${WORKING_DIR}/logs/ara-report/"
