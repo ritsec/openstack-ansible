@@ -119,6 +119,9 @@ compute_hosts: &compute_hosts
   nova12:
     ip: 10.0.10.12
 
+# Configure access to LXC containers
+lxc_container_ssh_key: "/home/ops/.ssh/ritsec-ops-signed.pub"
+
 # galera, memcache, rabbitmq, utility
 shared-infra_hosts: *controller_hosts
 
