@@ -1,5 +1,4 @@
 ---
-horizon_service_region: '{{ service_region }}'
 horizon_enable_ha_router: True
 horizon_default_dns_nameservers: [ 10.0.10.201, 10.0.10.202, 10.0.10.203 ]
 #horizon_enable_magnum_ui: true

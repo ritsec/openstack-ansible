@@ -2,7 +2,6 @@
 gnocchi_storage_driver: ceph
 gnocchi_ceph_pool: gnocchi-metrics-hdd
 gnocchi_ceph_username: gnocchi
-gnocchi_service_region: '{{ service_region }}'
 
 # THESE NEED TO BE ENABLED WHEN FIRST DEPLOYING GNOCCHI
 #venv_build_distro_package_list: [ "cython", "librados2", "librados-dev" ]
