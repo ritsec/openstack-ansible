@@ -1,6 +1,7 @@
 # User secrets files
 etc/openstack_deploy/user_secrets.yml
 etc/openstack_deploy/user_secrets_custom.yml
+etc/openstack_deploy/ansible_facts/**
 
 # Compiled source #
 ###################
