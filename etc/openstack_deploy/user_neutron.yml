@@ -1,6 +1,5 @@
 ---
 neutron_dns_domain: ritsec.co.
-neutron_service_region: '{{ service_region }}'
 neutron_ceilometer_enabled: true
 neutron_allow_reverse_dns_lookup: false
 neutron_l2_population: true
@@ -12,3 +11,4 @@ neutron_plugin_base:
     #- vpnaas
     #- dns
   - qos
+neutron_quota_floatingip: 1

@@ -1,6 +1,5 @@
 ---
 cinder_ceilometer_enabled: true
-cinder_service_region: '{{ service_region }}'
 cinder_quota_gigabytes: 100
 cinder_ceph_client: cinder-nova
 cinder_storage_availability_zone: cinderAZ_1

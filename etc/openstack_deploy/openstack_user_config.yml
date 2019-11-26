@@ -24,7 +24,6 @@ global_overrides:
   security_rhel7_session_timeout: 0
   cidr_networks: *cidr_networks
   internal_lb_vip_address: 10.0.10.220
-  # 129.21.228.193 (.254)
   external_lb_vip_address: stack.ritsec.cloud
   management_bridge: "br-mgmt"
   provider_networks:
@@ -65,13 +64,15 @@ global_overrides:
           - nova_compute
           - ceph-osd
     - network:
-        container_bridge: "br-wan"
+        container_bridge: "br-vlan"
+        host_bind_override: "bond-provider"
         container_type: "veth"
-        container_interface: "eth3"
-        type: "flat"
-        net_name: "wan"
+        container_interface: "eth4"
+        type: "vlan"
+        net_name: "vlan"
+        range: "5:30"
         group_binds:
-          - neutron_linuxbridge_agent
+          - network_hosts
     - network:
         container_bridge: "br-vlan"
         host_bind_override: "bond-mgmt"
@@ -81,7 +82,7 @@ global_overrides:
         net_name: "vlan"
         range: "5:30"
         group_binds:
-          - neutron_linuxbridge_agent
+          - compute_hosts
 
 # Controller Nodes
 controller_hosts: &controller_hosts
@@ -94,33 +95,30 @@ controller_hosts: &controller_hosts
 
 # Nova Nodes
 compute_hosts: &compute_hosts
-  nova01:
-    ip: 10.0.10.1
-  nova02:
-    ip: 10.0.10.2
-  nova03:
-    ip: 10.0.10.3
+#  nova01:
+#    ip: 10.0.10.1
+#  nova02:
+#    ip: 10.0.10.2
+#  nova03:
+#    ip: 10.0.10.3
   nova04:
     ip: 10.0.10.4
   nova05:
     ip: 10.0.10.5
 #  nova06:
 #    ip: 10.0.10.6
-  nova07:
-    ip: 10.0.10.7
-  nova08:
-    ip: 10.0.10.8
-  nova09:
-    ip: 10.0.10.9
+#  nova07:
+#    ip: 10.0.10.7
+#  nova08:
+#    ip: 10.0.10.8
+#  nova09:
+#    ip: 10.0.10.9
   nova10:
     ip: 10.0.10.10
   nova11:
     ip: 10.0.10.11
   nova12:
     ip: 10.0.10.12
-
-# Configure access to LXC containers
-lxc_container_ssh_key: "/home/ops/.ssh/ritsec-ops-signed.pub"
 
 # galera, memcache, rabbitmq, utility
 shared-infra_hosts: *controller_hosts

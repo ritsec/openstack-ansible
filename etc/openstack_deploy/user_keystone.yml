@@ -1,3 +1,2 @@
 ---
-keystone_service_region: '{{ service_region }}'
 keystone_ceilometer_enabled: true

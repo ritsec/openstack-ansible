@@ -18,6 +18,9 @@
 ### the defaults for each role to find additional override options.
 ###
 
+openstack_domain: ritsec.co
+dhcp_domain: ritsec.co
+
 ## Debug and Verbose options.
 debug: false
 
