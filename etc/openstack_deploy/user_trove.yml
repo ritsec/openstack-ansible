@@ -1,2 +1,2 @@
 ---
-trove_ceilometer_enabled: true
+trove_ceilometer_enabled: false

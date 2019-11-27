@@ -1,2 +1,2 @@
 ---
-heat_ceilometer_enabled: true
+heat_ceilometer_enabled: false
