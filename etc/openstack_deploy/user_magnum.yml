@@ -1,2 +1,2 @@
 ---
-magnum_ceilometer_enabled: true
+magnum_ceilometer_enabled: false
