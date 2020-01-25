@@ -2,4 +2,4 @@
 glance_ceilometer_enabled: true
 glance_default_store: rbd
 glance_ceph_client: glance
-glance_rbd_store_pool: glance-hdd
+glance_rbd_store_pool: glance-ssd
